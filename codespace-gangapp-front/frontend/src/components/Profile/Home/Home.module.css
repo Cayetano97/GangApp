@@ -1,0 +1,121 @@
+.home {
+  padding: 2em 0;
+  height: fit-content;
+  min-height: calc(100vh - 6.5em);
+
+  & .new-list {
+    display: flex;
+    justify-content: center;
+
+    & > button {
+      padding: 0.75em 1em;
+      margin: 2em 0 1em;
+      background-color: coral;
+      border-radius: 0.5rem;
+      width: fit-content;
+      color: white;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      border: 1px solid transparent;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      &:hover,
+      :active {
+        background-color: #fcefe8;
+        color: #e86934;
+        cursor: pointer;
+        border: 1px solid #e86934;
+      }
+
+      & > svg {
+        margin-left: 0.7em;
+      }
+    }
+  }
+
+  & .shopping-lists {
+    margin: 0.5em 0;
+
+    & .shopping-lists-title {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+
+      & > svg {
+        padding: 0.7em;
+        margin-right: 1em;
+        font-size: 1.2rem;
+        background-color: #fcefe8;
+        border-radius: 1rem;
+        color: coral;
+        border: 1px solid rgb(255, 163, 130);
+      }
+
+      & > h3 {
+        font-size: 1.6rem;
+        margin: 1em 0;
+      }
+    }
+
+    & .see-all {
+      font-family: "Inter", sans-serif;
+      width: fit-content;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 300;
+      padding: 0.5em 1em;
+      margin-bottom: 1em;
+      border-radius: 0.5rem;
+      background-color: coral;
+      color: white;
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: #fcefe8;
+        color: #e86934;
+        cursor: pointer;
+        border: 1px solid #e86934;
+      }
+    }
+  }
+
+  & .sales {
+    margin: 0.5em 0;
+
+    & .sales-title {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+
+      & > svg {
+        padding: 0.7em;
+        margin-right: 1em;
+        font-size: 1.2rem;
+        background-color: #fcefe8;
+        border-radius: 1rem;
+        color: coral;
+        border: 1px solid rgb(255, 163, 130);
+      }
+      & > h3 {
+        margin: 1em 0;
+        font-size: 1.6rem;
+      }
+    }
+
+    & > p {
+      font-size: 1.2rem;
+      margin: 0.5em 0;
+      line-height: 1.5em;
+      font-weight: 300;
+      & > svg {
+        cursor: pointer;
+        color: coral;
+        margin-left: 0.2em;
+        &:hover {
+          color: rgb(89, 165, 196);
+        }
+      }
+    }
+  }
+}

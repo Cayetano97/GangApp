@@ -1,0 +1,108 @@
+.MainAdmin {
+  background-color: #f2f4f7;
+  padding: 1.5em;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 4rem auto;
+  font-size: 1.3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  & h2 {
+    & svg {
+      margin-left: 0.5em;
+    }
+  }
+  & h3 {
+    margin: 1em 0 0 0;
+  }
+  & h3:first-of-type {
+    margin: 1em 0 0.3em 0;
+    padding-top: 1em;
+    border-top: 1px solid rgb(141, 141, 141);
+  }
+  & .actions {
+    display: flex;
+    flex-direction: column;
+    & button {
+      width: fit-content;
+      margin: auto;
+      margin-top: 1em;
+      background-color: coral;
+      color: #ffffff;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      &:hover {
+        background-color: #fcefe8;
+        color: #e86934;
+        cursor: pointer;
+        border: 1px solid #e86934;
+      }
+    }
+  }
+  .statsproducts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5em;
+    & span {
+      margin-top: 1em;
+      width: 100%;
+      padding: 0.5em;
+      background-color: #ffffff;
+      border: 1px solid #ee6b4d;
+      border-radius: 0.5rem;
+      &:first-of-type {
+        margin: 0;
+      }
+    }
+    .marketnames {
+      margin-top: 1em;
+      width: 100%;
+      padding: 0.5em;
+      background-color: #ffffff;
+      border: 1px solid #ee6b4d;
+      border-radius: 0.5rem;
+      & span {
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid rgb(141, 141, 141);
+      }
+      & ul {
+        margin-top: 1em;
+      }
+    }
+  }
+  .statslist {
+    display: flex;
+    flex-direction: column;
+    & span {
+      width: 100%;
+      padding: 0.5em;
+      background-color: #ffffff;
+      border: 1px solid #ee6b4d;
+      border-radius: 0.5rem;
+      margin-top: 1em;
+    }
+    & button {
+      width: fit-content;
+      margin: auto;
+      margin-top: 1em;
+      background-color: coral;
+      color: #ffffff;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      &:hover {
+        background-color: #fcefe8;
+        color: #e86934;
+        cursor: pointer;
+        border: 1px solid #e86934;
+      }
+    }
+  }
+}

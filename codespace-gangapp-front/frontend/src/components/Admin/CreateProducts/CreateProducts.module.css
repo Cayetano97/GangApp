@@ -1,0 +1,97 @@
+.maincreate {
+  background-color: #f2f4f7;
+  padding: 1.5em;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 4rem auto;
+  font-size: 1.3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  & h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.7em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgb(141, 141, 141);
+  }
+  & h3 {
+    font-size: 1.5rem;
+    margin: 1.5em 0 0.5em 0;
+    text-align: center;
+  }
+  & button:last-of-type {
+    margin-bottom: 1em;
+  }
+}
+
+.formcreate {
+  display: flex;
+  flex-direction: column;
+  & input {
+    width: 100%;
+    padding: 0.5em;
+    background-color: #ffffff;
+    border: 1px solid #ee6b4d;
+    border-radius: 0.5rem;
+    margin-top: 1em;
+    &:first-of-type {
+      margin-bottom: 1em;
+    }
+  }
+  & button {
+    width: 30%;
+    margin: auto;
+    margin-top: 1em;
+    background-color: coral;
+    color: #ffffff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: #fcefe8;
+      color: #e86934;
+      cursor: pointer;
+      border: 1px solid #e86934;
+    }
+    & svg {
+      margin-left: 0.5em;
+    }
+  }
+  .inputprice {
+    margin: 0 0 1em 0;
+  }
+  .closebutton {
+    width: 15%;
+    background: rgb(255, 100, 100);
+    margin-bottom: 1em;
+    & svg {
+      display: block;
+      margin: auto;
+    }
+  }
+  .addmarketbutton {
+    width: auto;
+  }
+}
+
+.importfile {
+  width: 100%;
+  padding: 0.5em;
+  background-color: #ffffff;
+  border: 1px solid #ee6b4d;
+  border-radius: 0.5rem;
+  margin-top: 1em;
+}
+
+.greenalert {
+  display: flex;
+  text-align: center;
+  & p {
+    width: 100%;
+    padding: 0.5em;
+    background-color: #ffffff;
+    border: 1px solid #34aa3e;
+    border-radius: 0.5rem;
+    margin-top: 1em;
+  }
+}

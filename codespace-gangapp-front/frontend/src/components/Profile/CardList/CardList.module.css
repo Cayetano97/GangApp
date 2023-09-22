@@ -1,0 +1,131 @@
+.singlelist {
+  & > svg {
+    margin-left: 50%;
+  }
+  & p {
+    margin: 1em 0;
+    font-size: 1.2rem;
+  }
+  & .list {
+    padding: 1em 1.5em;
+    margin: 1em 0 2em;
+    border-radius: 0.5rem;
+    background-color: #f2f4f7;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e2e2;
+
+    & .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid #e0e0e0;
+
+      & > h5 {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      & > span {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 0.5em 1.5em;
+        border-radius: 0.5rem;
+        color: white;
+      }
+      & > span.saved {
+        background-color: #ffbb68;
+      }
+
+      & > span.shopping {
+        background-color: #a49afd;
+      }
+
+      & > span.finished {
+        background-color: #5fb98c;
+      }
+    }
+
+    & .products {
+      & .open-list-noProducts {
+        margin-top: 1em;
+        margin-left: 75%;
+        font-size: 1rem;
+        font-family: "Inter", sans-serif;
+        padding: 0.5em 0;
+        background-color: #fff;
+        color: gray;
+        width: 6em;
+        border-radius: 0.3rem;
+        text-align: right;
+
+        &:hover,
+        :active {
+          scale: 1.1;
+          cursor: pointer;
+        }
+
+        & > svg {
+          margin-left: 0.5em;
+        }
+      }
+      & > ul {
+        padding: 1em;
+
+        & .more {
+          font-size: 0.8rem;
+        }
+        & > p {
+          font-size: 1.3rem;
+          font-weight: 400;
+          padding: 0.5em 1.5em;
+        }
+
+        & > li {
+          margin-left: 1em;
+          padding: 0.5em 0;
+          list-style-type: "-  ";
+        }
+      }
+
+      & .cardlist-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.2em;
+
+        & .cardlist-footer-left {
+          & > p {
+            font-size: 0.95rem;
+            font-weight: 300;
+          }
+        }
+
+        & .open-list {
+          font-size: 1rem;
+          font-family: "Inter", sans-serif;
+          padding: 0.5em 0;
+          background-color: #f2f4f7;
+          color: rgb(99, 99, 99);
+          width: 6em;
+          border-radius: 0.3rem;
+          text-align: center;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:hover,
+          :active {
+            scale: 1.1;
+            cursor: pointer;
+          }
+
+          & > svg {
+            margin-left: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}

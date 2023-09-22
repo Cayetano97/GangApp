@@ -1,0 +1,28 @@
+.active {
+  position: relative;
+  background-color: rgb(237, 255, 233);
+  padding: 1em 3.5em;
+  width: fit-content;
+  margin: 0 auto;
+  border: 1px solid rgb(130, 235, 130);
+  border-radius: 0.5rem;
+  transition: all 0.5s ease-in-out;
+
+  & > svg {
+    position: absolute;
+    color: rgb(76, 139, 100);
+    top: 0.6em;
+    right: 0.6em;
+    cursor: pointer;
+  }
+}
+
+.close {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .active {
+    max-width: 30em;
+  }
+}

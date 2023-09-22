@@ -1,0 +1,29 @@
+.deleteButton {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.deleteButton > button {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  /* background-color: coral; */
+  background-color: #ff5858;
+  padding: 0.5em 1em;
+  border-radius: 0.5rem;
+  /* margin-right: 1em; */
+  border: 1px solid transparent;
+}
+
+.deleteButton > button:hover {
+  cursor: pointer;
+  background-color: #ffe8e8;
+  color: #ff5858;
+  border: 1px solid #ff5858;
+}
+
+.deleteButton > button > svg {
+  margin-left: 0.5em;
+}

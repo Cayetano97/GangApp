@@ -1,0 +1,62 @@
+.back {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 3em;
+  width: fit-content;
+  & .arrow {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0.7em;
+    color: rgb(110, 110, 110);
+  }
+
+  & > span {
+    color: rgb(110, 110, 110);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0 0.5em;
+  }
+
+  &:hover,
+  :active {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.usedMain {
+  background-color: #f2f4f7;
+  padding: 1.5em;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-size: 1.3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  & h3 {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.5em;
+  }
+}
+
+.cardsale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  & img {
+    margin: 0 0 1em 0;
+  }
+  & span {
+    margin: 0.5em 0;
+  }
+}

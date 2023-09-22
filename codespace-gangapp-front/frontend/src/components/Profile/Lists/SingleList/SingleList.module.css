@@ -1,0 +1,35 @@
+.singleList {
+  background-color: #fff;
+  height: fit-content;
+  min-height: calc(100vh - 6.5em);
+
+  & .back {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 3em 0 2em;
+    width: fit-content;
+    & .arrow {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 400;
+      padding: 0.7em;
+      color: rgb(110, 110, 110);
+    }
+
+    & > span {
+      color: rgb(110, 110, 110);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0 0.5em;
+    }
+
+    &:hover,
+    :active {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

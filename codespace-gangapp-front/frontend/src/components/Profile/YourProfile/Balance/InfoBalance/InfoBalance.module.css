@@ -1,0 +1,40 @@
+.infoBalance {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin: 2.5em 0 0 0;
+}
+
+.cardBalance {
+  width: 40%;
+  max-width: 450px;
+  overflow: hidden;
+  background-color: #feb784;
+  border-radius: 4px;
+  margin: 0 0.2em;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  color: #434658;
+  margin: 0 0.6em 0 0;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.infoMoney {
+  font-size: 15px;
+  font-weight: bold;
+}

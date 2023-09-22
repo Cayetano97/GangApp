@@ -1,0 +1,173 @@
+.market {
+  & > h4 {
+    margin-left: 1em;
+    font-size: 1.2rem;
+  }
+
+  & .market-title {
+    margin: 3em 0 1em;
+    display: flex;
+    align-items: center;
+
+    & > svg {
+      padding: 0.7em;
+      margin-right: 1em;
+      font-size: 1.2rem;
+      background-color: #fcefe8;
+      border-radius: 1rem;
+      color: coral;
+      border: 1px solid rgb(255, 163, 130);
+    }
+
+    & > h2 {
+      font-size: 1.6rem;
+      margin: 1em 0;
+    }
+  }
+
+  & .market-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2em;
+
+      & > input {
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  & .comparisonDiv {
+    margin: 1em;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    & .comparisonButton {
+      background-color: coral;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5em;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      cursor: pointer;
+    }
+  }
+  & .cardHeader,
+  .cardHeader-recomended {
+    margin: 2em 1em;
+    padding: 1em;
+    list-style: none;
+    border-radius: 0.5em;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+
+    & .nameCheck {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & > h3 {
+        font-size: 1.4rem;
+      }
+    }
+    & .cardList,
+    .cardList-recomended {
+      width: 100%;
+    }
+  }
+
+  & .cardHeader-recomended {
+    background-color: #ffdebf;
+    border: 1px solid #727272;
+    & .nameCheck {
+      border-bottom: 1px solid #727272;
+    }
+
+    & .icon {
+      color: #434658;
+    }
+    & .checkboxText {
+      color: black;
+    }
+  }
+
+  & .cardHeader {
+    background-color: #f2f4f7;
+  }
+}
+
+.divButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  & .button {
+    margin-bottom: 1em;
+    padding: 0.5em 1em;
+    list-style: none;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: coral;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & > svg {
+      margin-left: 1em;
+      scale: 1.1;
+    }
+  }
+}
+
+.checkboxText {
+  margin: 0 0.1em;
+  list-style: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: coral;
+}
+
+.available {
+  font-size: 1em;
+}
+
+.total {
+  font-size: 1em;
+  margin-left: 0.3em;
+}
+
+.liList {
+  line-height: 3em;
+}
+
+.icon {
+  margin: 0 0.8em 0 0;
+  font-size: 1.3em;
+  color: coral;
+}
+
+.save > ul > li {
+  margin-left: 4em;
+  list-style: circle;
+  & > span {
+    font-weight: bold;
+  }
+}

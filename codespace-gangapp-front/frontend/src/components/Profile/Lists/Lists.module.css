@@ -1,0 +1,64 @@
+.all-lists {
+  background-color: #fff;
+  min-height: calc(100vh - 6.5em);
+  height: fit-content;
+
+  & .back {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 3em 0 2em;
+    width: fit-content;
+    & .arrow {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 400;
+      padding: 0.7em;
+      color: rgb(110, 110, 110);
+    }
+
+    & > span {
+      color: rgb(110, 110, 110);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0 0.5em;
+    }
+
+    &:hover,
+    :active {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.faPlus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0 0;
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: coral;
+  color: #fcefe8;
+  font-size: 1.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: sticky;
+  left: 90vw;
+  bottom: 2vh;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  &:hover {
+    background-color: #fcefe8;
+    color: #e86934;
+    cursor: pointer;
+    border: 1px solid #e86934;
+  }
+  & > svg {
+    width: 1em;
+  }
+}

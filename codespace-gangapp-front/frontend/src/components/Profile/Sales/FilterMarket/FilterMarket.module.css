@@ -1,0 +1,49 @@
+.checkbox {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.checkboxFilter {
+  background-color: #f2f4f7;
+  overflow: hidden;
+  border-radius: 0.5em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+  margin: 2em;
+  margin: auto;
+  padding: 0.8em;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: fit-content;
+  font-size: 1em;
+}
+
+.checkboxText {
+  margin: 1em;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.checkboxLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2em 1em 0.2em 0;
+  list-style: none;
+  width: fit-content;
+  font-size: 1.1rem;
+}
+
+.checkboxLabel input {
+  margin-right: 0.3em;
+}

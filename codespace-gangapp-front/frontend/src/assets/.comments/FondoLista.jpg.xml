@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Notepad</caption>
+  <note>White notepad on the table</note>
+  <place/>
+  <categories>
+    <category value="desk"/>
+    <category value="office"/>
+    <category value="workplace"/>
+    <category value="table"/>
+    <category value="business"/>
+    <category value="white"/>
+    <category value="object"/>
+    <category value="background"/>
+    <category value="work"/>
+    <category value="desktop"/>
+    <category value="above"/>
+    <category value="top view"/>
+    <category value="item"/>
+    <category value="concept"/>
+    <category value="workspace"/>
+    <category value="equipment"/>
+    <category value="nobody"/>
+    <category value="details"/>
+    <category value="office supplies"/>
+    <category value="studio shot"/>
+    <category value="convenience"/>
+    <category value="notepad"/>
+    <category value="notebook"/>
+    <category value="paper"/>
+    <category value="blank"/>
+    <category value="empty"/>
+  </categories>
+</comment>
