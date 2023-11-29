@@ -32,17 +32,15 @@ const HistoryBalance = () => {
           const data = await response.json();
           setHistoryList(data.data);
         }
+        setLoading(false);
       } catch (error) {
         console.log("Error getting data");
-      } finally {
-        setLoading(false);
       }
     };
 
     getHistoryList();
   }, []);
 
-  // Función para formatear la fecha en formato europeo (DD/MM/AAAA)
   function formatDate(dateString) {
     const date = new Date(dateString);
     const day = String(date.getDate()).padStart(2, "0");
@@ -51,7 +49,6 @@ const HistoryBalance = () => {
     return `${day}/${month}/${year}`;
   }
 
-  // Función para capitalizar la primera letra del texto
   function capitalizeFirstLetter(text) {
     return text.charAt(0).toUpperCase() + text.slice(1);
   }
@@ -68,21 +65,19 @@ const HistoryBalance = () => {
           <p>{error}</p>
         ) : (
           <table>
-            <thead>
+            <th>
               <tr>
                 <th>Fecha:</th>
                 <th>Nombre:</th>
                 <th>Supermercado:</th>
               </tr>
-            </thead>
+            </th>
             <tbody>
               {historyList.map((item, index) => (
                 <tr key={index}>
                   <td>{formatDate(item.createdAt)}</td>
                   <td>{capitalizeFirstLetter(item.name_list)}</td>{" "}
-                  {/* Ajusta el nombre del campo cantidad */}
                   <td>{item.supermarkets.join(", ")}</td>{" "}
-                  {/* Une los supermercados en un solo string */}
                 </tr>
               ))}
             </tbody>

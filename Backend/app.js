@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const URL = process.env.DATABASE_URL;
+const URL = `mongodb+srv://admin:admin@cluster0.o4v9nwy.mongodb.net/smartcart?retryWrites=true&w=majority`;
 
 mongoose.connect(URL, { useNewUrlParser: true });
 

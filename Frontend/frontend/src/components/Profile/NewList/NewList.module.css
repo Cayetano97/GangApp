@@ -71,18 +71,14 @@
   justify-content: center;
   font-size: 2rem;
   text-decoration: underline;
-
   padding-bottom: 1.5rem;
 }
 
 .SearchInput {
   width: 100%;
   padding: 0.5em;
-  border: none;
-  background-color: #ffffff;
-  border-top: 1px solid #ee6b4d;
-  border-left: 1px solid #ee6b4d;
-  border-right: 1px solid #ee6b4d;
+  border: 1px solid #ee6b4d;
+  border-bottom: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin-top: 1em;
@@ -99,14 +95,10 @@
 }
 
 .List {
-  font-family: "Shadows Into Light", cursive;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-top: 3rem;
-
   border-radius: 5px;
-  padding: 1rem 0rem 0rem 0rem;
-  background-image: url("../../../assets/FondoLista.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 1rem 0 0 0;
   background-size: cover;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #615d5c;

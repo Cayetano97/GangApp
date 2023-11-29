@@ -1,4 +1,3 @@
-import classes from "./Balance.module.css";
 import HistoryBalance from "./HistoryBalance/HistoryBalance";
 import InfoBalance from "./InfoBalance/InfoBalance";
 import WelcomeBalance from "./WelcomeBalance/WelcomeBalance";
@@ -6,7 +5,7 @@ import StatisticsBalance from "./StatisticsBalance/StatisticsBalance";
 
 const Balance = () => {
   return (
-    <div className={classes.Balance}>
+    <div style={{ margin: "3.5em 0" }}>
       <WelcomeBalance />
       <InfoBalance />
       <StatisticsBalance />

@@ -4,29 +4,25 @@
 
   & .title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 2.5em 0;
-
-    & > svg {
-      color: coral;
-      font-size: 3rem;
-
-      &:first-child {
-        margin-right: 1em;
-      }
+    & img {
+      margin-bottom: 1.5em;
+      width: 7em;
+      height: auto;
     }
-  }
-
-  & > h1 {
-    margin: 1.5em 0;
-    font-weight: 300;
+    & h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 4rem;
+    }
   }
 
   & > form {
     position: relative;
-    width: 75%;
-    height: 18em;
+    width: 80%;
+    height: 24em;
     margin: 3em auto 2em auto;
     padding: 2em;
     background-color: #f2f4f7;
@@ -38,9 +34,9 @@
 
     & > input {
       font-family: "Inter", sans-serif;
-      font-size: 0.8rem;
-      margin: 0.8em 0;
-      padding: 0.9em 0.5em;
+      font-size: 1rem;
+      margin: 1em 0;
+      padding: 1em 0.5em;
       width: 100%;
       border: 1px solid transparent;
       border-radius: 0.3rem;
@@ -52,11 +48,31 @@
       }
     }
 
+    .passwordWrapper {
+      position: relative;
+      width: 100%;
+      & > input {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        margin: 1em 0;
+        padding: 1em 0.5em;
+        width: 100%;
+        border: 1px solid transparent;
+        border-radius: 0.3rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover,
+        &:focus {
+          border: 1px solid gray;
+        }
+      }
+    }
+
     & .faEye {
       position: absolute;
-      top: 40%;
-      right: 12%;
-      width: 1.3em;
+      top: 42%;
+      right: 1.5em;
+      scale: 1.25;
       transition: all 0.2s ease-in-out;
 
       &:hover {
@@ -65,14 +81,12 @@
     }
 
     & > label {
-      font-family: "Inter", sans-serif;
-      font-size: 0.8rem;
-      margin: 0.5em 0;
+      font-size: 1rem;
+      margin: 1em 0;
       width: 100%;
       display: flex;
       justify-content: left;
       align-items: center;
-      transition: all 0.2s ease-in-out;
 
       & > input {
         margin-right: 0.8em;
@@ -99,14 +113,10 @@
     }
 
     & > p {
-      font-size: 0.9rem;
-      width: 100%;
-
+      font-size: 1.1rem;
+      margin-top: 0.5em;
       & > a {
         color: #ee6b4d;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
-
         &:hover {
           text-decoration: underline;
         }
@@ -114,14 +124,3 @@
     }
   }
 }
-
-@media screen and (min-width: 768px) {
-  .login > form {
-    max-width: 30em;
-    margin: 6em auto;
-  }
-}
-
-/* @media screen and (min-width: 992px) {} */
-
-/* @media screen and (min-width: 1280px) {} */

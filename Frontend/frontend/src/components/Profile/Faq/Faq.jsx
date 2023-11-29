@@ -21,7 +21,7 @@ const faqData = [
   },
   {
     id: 3,
-    question: "¿Necesito una cuenta para usar la aplicación?",
+    question: "¿Necesito cuenta para usar la aplicación?",
     answer:
       "Sí, para acceder a las ofertas, necesitas crear una cuenta en la aplicación. Puedes registrarte con tu dirección de correo electrónico y crear una contraseña segura.",
   },
@@ -46,25 +46,18 @@ const faqData = [
   {
     id: 7,
     question:
-      "¿Puedo combinar estas ofertas con cupones o promociones del supermercado?",
+      "¿Puedo combinar ofertas con cupones o promociones del supermercado?",
     answer:
       "En general, las ofertas de la aplicación no son acumulables con otras promociones o cupones del supermercado. Sin embargo, es posible que algunos supermercados permitan ciertas combinaciones. Consulta los términos y condiciones de cada oferta para obtener más información.",
   },
   {
     id: 8,
-    question:
-      "¿Qué hago si tengo un problema con la aplicación o una oferta no se aplica correctamente?",
-    answer:
-      'Si experimentas problemas técnicos o tienes preguntas sobre una oferta específica, puedes comunicarte con nuestro servicio de atención al cliente a través de la sección "Soporte" dentro de la aplicación. Estaremos encantados de ayudarte a resolver cualquier inconveniente.',
-  },
-  {
-    id: 9,
     question: "¿Es esta aplicación gratuita?",
     answer:
       "Sí, la aplicación es gratuita para descargar y utilizar. No hay costos ocultos ni tarifas para acceder a las ofertas.",
   },
   {
-    id: 10,
+    id: 9,
     question: "¿Cómo funciona la aplicación?",
     answer:
       "La aplicación utiliza la geolocalización para identificar supermercados cercanos a tu ubicación. Una vez que seleccionas un supermercado, podrás ver las ofertas y descuentos disponibles en ese establecimiento. Puedes agregar los productos que desees a tu lista de compras y presentarlos en caja para recibir el descuento correspondiente.",
@@ -88,16 +81,16 @@ const Faq = () => {
             </h3>
           </label>
         </div>
-        <p>Nombre: GangApp</p>
+        <p>Nombre: SmartCart</p>
         <p>Teléfono: +34 XXX XXX XXX</p>
-        <p>Email: contacto@example.com</p>
-        <p>Dirección: Calle Principal, Malága</p>
+        <p>Email: contacto@contacto.com</p>
+        <p>Dirección: Calle Falsa 123, Malága</p>
       </div>
       <div className={classes.faqContainer}>
         <div>
           <label>
             <h3>
-              <FontAwesomeIcon icon={faCircleQuestion} /> FAQ GangApp
+              <FontAwesomeIcon icon={faCircleQuestion} /> FAQ
             </h3>
           </label>
         </div>

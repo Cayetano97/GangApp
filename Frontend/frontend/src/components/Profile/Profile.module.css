@@ -4,9 +4,8 @@
   min-height: 100vh;
   height: fit-content;
   transition: all 0.2s ease-in-out;
-  background-color: #fff;
 
-  & .profile-header {
+  .profileheader {
     position: fixed;
     top: 0;
     left: 0;
@@ -16,12 +15,10 @@
     width: 100%;
     padding: 1em 1.5em;
     z-index: 2;
-    background-color: white;
 
-    & > svg {
-      color: coral;
-      font-size: 2rem;
-      cursor: pointer;
+    & > img {
+      width: 2.75em;
+      height: auto;
     }
 
     & .profile-header-left {
@@ -46,16 +43,3 @@
     }
   }
 }
-
-/* .scrolled {
-  background-color: tomato;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 1;
-}
-
-.scrolled-hidde {
-  opacity: 0;
-  background-color: aquamarine;
-} */

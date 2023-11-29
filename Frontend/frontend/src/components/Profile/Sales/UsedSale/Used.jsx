@@ -34,7 +34,7 @@ const Used = () => {
 
   useEffect(() => {
     fetchUsedSale(idSales);
-  }, []);
+  }, [idSales]);
 
   return (
     <>

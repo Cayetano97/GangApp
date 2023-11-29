@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
@@ -20,29 +19,27 @@ import Faq from "./components/Profile/Faq/Faq";
 
 const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />}>
-          <Route index element={<Home />} />
-          <Route path="admin" element={<HomeAdmin />} />
-          <Route path="admin/products" element={<Products />} />
-          <Route path="admin/create" element={<CreateProducts />} />
-          <Route path="admin/edit" element={<EditProducts />} />
-          <Route path="new" element={<NewList />} />
-          <Route path="market" element={<Market />} />
-          <Route path="list/:id_user" element={<Lists />} />
-          <Route path="products" element={<Products />} />
-          <Route path="lists/:id" element={<SingleList />} />
-          <Route path="sales" element={<Sales />} />
-          <Route path="sales/used" element={<UsedSale />} />
-          <Route path="yourprofile" element={<YourProfile />} />
-          <Route path="faq" element={<Faq />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/profile" element={<Profile />}>
+        <Route index element={<Home />} />
+        <Route path="admin" element={<HomeAdmin />} />
+        <Route path="admin/products" element={<Products />} />
+        <Route path="admin/create" element={<CreateProducts />} />
+        <Route path="admin/edit" element={<EditProducts />} />
+        <Route path="new" element={<NewList />} />
+        <Route path="market" element={<Market />} />
+        <Route path="list/:id_user" element={<Lists />} />
+        <Route path="products" element={<Products />} />
+        <Route path="lists/:id" element={<SingleList />} />
+        <Route path="sales" element={<Sales />} />
+        <Route path="sales/used" element={<UsedSale />} />
+        <Route path="yourprofile" element={<YourProfile />} />
+        <Route path="faq" element={<Faq />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 

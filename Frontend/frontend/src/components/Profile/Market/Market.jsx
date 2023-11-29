@@ -13,7 +13,6 @@ import {
 import Alert from "../../Alert/Alert";
 
 const Market = () => {
-  //UseStates
   const [markets, setMarkets] = useState({});
   const [prices, setPrices] = useState({});
   const [selectedMarket, setSelectedMarket] = useState(null);
@@ -27,7 +26,6 @@ const Market = () => {
   const [savedMoney, setSavedMoney] = useState([]);
   const [savedMarket, setSavedMarket] = useState([]);
 
-  //Const declarations
   const navigate = useNavigate();
   const respuesta = localStorage.getItem("Response");
   const id_list = localStorage.getItem("id_list");
@@ -43,7 +41,6 @@ const Market = () => {
     };
   });
 
-  //Handle functions
   const handleButtonRedirect = () => {
     if (selectedMarket !== null) {
       updateSupermarketName(id_list);
@@ -61,7 +58,6 @@ const Market = () => {
     setSelectedPrice(prices[marketId]);
   };
 
-  //Fetch functions
   const fetchMarkets = async (id) => {
     try {
       setIsLoading(true);
@@ -109,8 +105,6 @@ const Market = () => {
     setIsLoading(false);
   };
 
-  //Handle filters functions
-
   const handlePriceFilter = () => {
     const orderPrice = merged.sort((a, b) => {
       return a.price - b.price;
@@ -130,11 +124,10 @@ const Market = () => {
   const recomendedMarket = () => {
     setIsLoadingRecomended(true);
     const products = merged.map((products) => products.products);
-    const maxProducts = Math.max(...products); //Mayor producto individual
+    const maxProducts = Math.max(...products);
     const savedMoney = [];
 
     if (maxProducts == productsQuantity) {
-      //Igualdad de productos
       const equalProducts = merged.filter(
         (product) => product.products == productsQuantity
       );
@@ -145,17 +138,14 @@ const Market = () => {
 
       setRecomended(equalPrices[0]);
 
-      //Calcular el ahorro
       for (let index = 1; index < equalPrices.length; index++) {
         savedMoney[equalPrices[index].market] =
           equalPrices[index].price - equalPrices[0].price;
       }
 
-      //Array de los ahorros
       const savedPrice = Object.values(savedMoney);
       const savedMarket = Object.keys(savedMoney);
 
-      //Filtrar los ahorros mayores a 0
       const filteredSavedPrice = savedPrice.filter((price) => price > 0);
       const fixedPrice = filteredSavedPrice.map((price) => price.toFixed(2));
       const filteredSavedMarket = savedMarket.filter(
@@ -167,12 +157,10 @@ const Market = () => {
 
       setIsLoadingRecomended(false);
     } else if (maxProducts < productsQuantity) {
-      //Menor producto individual filtrado por cantidad y precio
       const lessProducts = merged.filter(
         (product) => product.products < productsQuantity
       );
 
-      //Filtrar entre los de menor cantidad por cantidad y precio
       const sortLessProducts = lessProducts.sort((a, b) => {
         if (a.products != b.products) {
           return b.products - a.products;
@@ -183,17 +171,14 @@ const Market = () => {
 
       setRecomended(sortLessProducts[0]);
 
-      //Calcular el ahorro
       for (let index = 1; index < sortLessProducts.length; index++) {
         savedMoney[sortLessProducts[index].market] =
           sortLessProducts[index].price - sortLessProducts[0].price;
       }
 
-      //Array de los ahorros
       const savedPrice = Object.values(savedMoney);
       const savedMarket = Object.keys(savedMoney);
 
-      //Filtrar los ahorros mayores a 0
       const filteredSavedPrice = savedPrice.filter((price) => price > 0);
       const fixedPrice = filteredSavedPrice.map((price) => price.toFixed(2));
       const filteredSavedMarket = savedMarket.filter(
@@ -205,7 +190,6 @@ const Market = () => {
 
       setIsLoadingRecomended(false);
     } else {
-      //Caso que nunca pasaría
       const never = merged.sort((a, b) => {
         return a.price - b.price;
       });
@@ -213,8 +197,6 @@ const Market = () => {
       setIsLoadingRecomended(false);
     }
   };
-
-  //UseEffects
 
   useEffect(() => {
     fetchMarkets(id_list);

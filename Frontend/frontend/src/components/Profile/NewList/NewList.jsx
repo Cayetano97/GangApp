@@ -155,7 +155,7 @@ const NewList = () => {
     if (productName !== "") {
       searchMatchingProducts();
     } else {
-      setMatchingProducts([]); // Limpiar la lista de productos coincidentes si el campo de búsqueda está vacío
+      setMatchingProducts([]);
     }
   }, [productName]);
 
@@ -208,10 +208,9 @@ const NewList = () => {
             </ul>
           </div>
         </div>
-
         <div className={classes.List}>
           <h3 className={classes.ListName}>
-            {listName !== "" ? `${listName}:` : "Sin Nombre"}
+            {listName !== "" ? `${listName}:` : "- Sin Nombre -"}
           </h3>
           <ul className={classes.UlList}>
             {selectedProducts.map((product) => (

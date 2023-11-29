@@ -17,8 +17,7 @@ const HomeAdmin = () => {
   const [allMarkets, setAllMarkets] = useState(0);
   const [allLists, setAllLists] = useState(0);
   const [allUsers, setUsers] = useState(0);
-  const [allSales, setSales] = useState(0);
-  const [marketNames, setMarketNames] = useState([]);
+  const [CountSales, setCountSales] = useState(0);
 
   const handleRedirect0 = () => {
     navigate("products");
@@ -33,117 +32,121 @@ const HomeAdmin = () => {
     navigate("/profile/new");
   };
 
-  useEffect(() => {
-    const getAllProducts = async () => {
-      try {
-        const response = await fetch(`http://localhost:8000/product`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("Token"),
-            "auth-token-refresh": localStorage.getItem("Refresh_Token"),
-          },
-        });
-        if (response.status !== 200) {
-          console.log("Error getting all products");
-        } else {
-          const data = await response.json();
-          console.log("All products ok");
-          setAllProducts(data.data);
-          setLoading(true);
-        }
-      } catch (error) {
-        console.log("Error getting all products");
+  const getAllProducts = async () => {
+    try {
+      const response = await fetch(`http://localhost:8000/product/count`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("Token"),
+          "auth-token-refresh": localStorage.getItem("Refresh_Token"),
+        },
+      });
+      if (response.status !== 200) {
+        console.log("Error getting all product number");
+      } else {
+        const data = await response.json();
+        console.log("All products ok");
+        setAllProducts(data.count);
+        setLoading(true);
       }
-    };
-    const getAllList = async () => {
-      try {
-        const response = await fetch(`http://localhost:8000/all_lists`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("Token"),
-            "auth-token-refresh": localStorage.getItem("Refresh_Token"),
-          },
-        });
-        if (response.status !== 200) {
-          console.log("Error getting all lists");
-        } else {
-          const data = await response.json();
-          console.log("All lists ok");
-          setAllLists(data.data);
-          setLoading(true);
-        }
-      } catch (error) {
+    } catch (error) {
+      console.log("Error getting all products");
+    }
+  };
+  const getAllMarkets = async () => {
+    try {
+      const response = await fetch(`http://localhost:8000/marketname`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("Token"),
+          "auth-token-refresh": localStorage.getItem("Refresh_Token"),
+        },
+      });
+      if (response.status !== 200) {
+        console.log("Error getting all market name");
+      } else {
+        const data = await response.json();
+        setAllMarkets(data);
+        setLoading(true);
+      }
+    } catch (error) {
+      console.log("Error getting all markets");
+    }
+  };
+  const getAllList = async () => {
+    try {
+      const response = await fetch(`http://localhost:8000/all_lists`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("Token"),
+          "auth-token-refresh": localStorage.getItem("Refresh_Token"),
+        },
+      });
+      if (response.status !== 200) {
         console.log("Error getting all lists");
+      } else {
+        const data = await response.json();
+        setAllLists(data.data);
+        setLoading(true);
       }
-    };
-    const getAllUsers = async () => {
-      try {
-        const response = await fetch(`http://localhost:8000/users`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("Token"),
-            "auth-token-refresh": localStorage.getItem("Refresh_Token"),
-          },
-        });
-        if (response.status !== 200) {
-          console.log("Error getting all users");
-        } else {
-          const data = await response.json();
-          console.log("All users ok");
-          setUsers(data.data);
-          setLoading(true);
-        }
-      } catch (error) {
+    } catch (error) {
+      console.log("Error getting all lists");
+    }
+  };
+  const getAllUsers = async () => {
+    try {
+      const response = await fetch(`http://localhost:8000/users`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("Token"),
+          "auth-token-refresh": localStorage.getItem("Refresh_Token"),
+        },
+      });
+      if (response.status !== 200) {
         console.log("Error getting all users");
+      } else {
+        const data = await response.json();
+        console.log("All users ok");
+        setUsers(data.data);
+        setLoading(true);
       }
-    };
-    const getAllSales = async () => {
-      try {
-        const response = await fetch(`http://localhost:8000/sales`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("Token"),
-            "auth-token-refresh": localStorage.getItem("Refresh_Token"),
-          },
-        });
-        if (response.status !== 200) {
-          console.log("Error getting all sales");
-        } else {
-          const data = await response.json();
-          console.log("All sales ok");
-          setSales(data.data);
-          setLoading(true);
-        }
-      } catch (error) {
-        console.log("Error getting all sales");
+    } catch (error) {
+      console.log("Error getting all users");
+    }
+  };
+  const getSalesCount = async () => {
+    try {
+      const response = await fetch(`http://localhost:8000/salescount`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("Token"),
+          "auth-token-refresh": localStorage.getItem("Refresh_Token"),
+        },
+      });
+      if (response.status !== 200) {
+        console.log("Error getting sales count");
+      } else {
+        const data = await response.json();
+        setCountSales(data.data);
+        setLoading(true);
       }
-    };
+    } catch (error) {
+      console.log("Error getting sales count");
+    }
+  };
+
+  useEffect(() => {
     getAllProducts();
     getAllList();
     getAllUsers();
-    getAllSales();
+    getSalesCount();
+    getAllMarkets();
   }, []);
-
-  useEffect(() => {
-    const getNumberOfMarkets = () => {
-      const markets = new Set();
-      allProducts.forEach((product) => {
-        product.market.forEach((market) => {
-          markets.add(market.name_market);
-        });
-      });
-      setAllMarkets(markets.size);
-      setMarketNames(Array.from(markets));
-    };
-
-    if (allProducts.length > 0) {
-      getNumberOfMarkets();
-    }
-  }, [allProducts]);
 
   return (
     <div className={classes.MainAdmin}>
@@ -168,17 +171,18 @@ const HomeAdmin = () => {
           <>
             <span>
               <strong>Número de productos: </strong>
-              {allProducts ? allProducts.length : 0}
+              {allProducts}
             </span>
             <div className={classes.marketnames}>
               <span>
                 <strong>Número de supermercados: </strong>
-                {allMarkets}
+                {allMarkets.count}
               </span>
               <ul>
-                {marketNames.map((name) => (
-                  <li key={name}>{name}</li>
-                ))}
+                {allMarkets.marketNames &&
+                  allMarkets.marketNames.map((name, index) => (
+                    <li key={index}>{name}</li>
+                  ))}
               </ul>
             </div>
           </>
@@ -216,7 +220,7 @@ const HomeAdmin = () => {
         {loading ? (
           <span>
             <strong>Número de ofertas: </strong>
-            {allSales ? allSales.length : 0}
+            {CountSales}
           </span>
         ) : (
           <Spinner />

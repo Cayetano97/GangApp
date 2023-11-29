@@ -1,10 +1,9 @@
-import classes from "./YourProfile.module.css";
 import Balance from "./Balance/Balance";
 
 const YourProfile = () => {
   return (
     <>
-      <div className={classes.yourProfile}>
+      <div>
         <Balance />
       </div>
     </>

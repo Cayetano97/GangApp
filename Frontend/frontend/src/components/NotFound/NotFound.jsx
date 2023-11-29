@@ -15,7 +15,11 @@ const NotFound = () => {
         Lo sentimos, la página que estás buscando no existe.
       </p>
 
-      <a href="/" className={classes.NotFoundLink} title="Volver al inicio">
+      <a
+        href="/profile"
+        className={classes.NotFoundLink}
+        title="Volver al inicio"
+      >
         Volver al inicio
       </a>
     </div>

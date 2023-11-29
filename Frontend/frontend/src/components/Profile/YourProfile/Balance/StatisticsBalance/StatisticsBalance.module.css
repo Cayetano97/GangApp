@@ -14,22 +14,22 @@
   text-align: center;
   font-size: 1.2em;
   margin: 2em 0 0.5em 0;
-}
 
-.statisticsBalanceTittle {
-  font-size: 1.5em;
-  margin: 0 0 0.5em 0;
-  font-weight: 800;
-  color: coral;
-}
+  .statisticsBalanceTittle {
+    font-size: 1.5em;
+    margin: 0 0 0.5em 0;
+    font-weight: 800;
+    color: coral;
+  }
 
-.statisticsBalanceItem {
-  width: fit-content;
-  border-collapse: collapse;
-  margin: 0 0 1em 0;
-}
+  .statisticsBalanceItem {
+    width: fit-content;
+    border-collapse: collapse;
+    margin: 0 0 1em 0;
 
-.statisticsBalanceItem p {
-  padding: 0.5em;
-  font-weight: bold;
+    p {
+      padding: 0.5em;
+      font-weight: bold;
+    }
+  }
 }

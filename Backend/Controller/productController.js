@@ -52,6 +52,49 @@ router.get("/productsfind/:name", verifyToken, async (req, res) => {
   }
 });
 
+// Get product count
+router.get("/product/count", verifyToken, async (req, res) => {
+  try {
+    const count = await Product.countDocuments();
+    res
+      .status(200)
+      .json({ status: "Success get product count", count, error: null });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ status: "Failed get product count", count: null, error });
+  }
+});
+
+// Get all market names
+
+router.get("/marketname", async (req, res) => {
+  try {
+    const products = await Product.find();
+    const markets = new Set();
+    products.forEach((product) => {
+      product.market.forEach((market) => {
+        markets.add(market.name_market);
+      });
+    });
+    const count = markets.size;
+    const marketNames = Array.from(markets);
+    res.status(200).json({
+      status: "Success get count of unique markets",
+      count,
+      marketNames,
+      error: null,
+    });
+  } catch (error) {
+    res.status(404).json({
+      status: "Failed get count of unique markets",
+      count: null,
+      marketNames: null,
+      error,
+    });
+  }
+});
+
 //ROLE ADMIN
 
 //Crear nuevo producto

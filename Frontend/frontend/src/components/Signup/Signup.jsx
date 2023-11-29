@@ -2,9 +2,9 @@ import classes from "./Signup.module.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHippo } from "@fortawesome/free-solid-svg-icons";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import Alert from "../Alert/Alert";
+import Icon from "../../assets/Icon.png";
 
 const validateEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,7 +46,6 @@ const Signup = () => {
         return;
       }
 
-      // If we reach here, all fields are valid, and we can proceed with the registration request.
       const response = await fetch("http://localhost:8000/signup", {
         method: "POST",
         headers: {
@@ -76,8 +75,8 @@ const Signup = () => {
   return (
     <div className={classes.signup}>
       <div className={classes.title}>
-        <FontAwesomeIcon icon={faHippo} />
-        <h2>GangApp</h2>
+        <img src={Icon} alt="Icon" />
+        <h1>SmartCart</h1>
       </div>
       <form onSubmit={handleSubmit}>
         <input
@@ -98,17 +97,19 @@ const Signup = () => {
           name="lastname"
           onBlur={handleInputBlur}
         />
-        <input
-          type={eye ? "password" : "text"}
-          placeholder="Introduce tu contraseña"
-          name="password"
-          onBlur={handleInputBlur}
-        />
-        <FontAwesomeIcon
-          icon={eye ? faEye : faEyeSlash}
-          onClick={handlePassword}
-          className={classes.faEye}
-        />
+        <div className={classes.passwordWrapper}>
+          <input
+            type={eye ? "password" : "text"}
+            placeholder="Introduce tu constraseña"
+            name="password"
+            onBlur={handleInputBlur}
+          />
+          <FontAwesomeIcon
+            icon={eye ? faEye : faEyeSlash}
+            onClick={handlePassword}
+            className={classes.faEye}
+          />
+        </div>
         <button type="submit" onBlur={handleInputBlur}>
           Regístrate
         </button>

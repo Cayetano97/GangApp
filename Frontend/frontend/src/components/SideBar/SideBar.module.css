@@ -15,9 +15,13 @@
     align-items: center;
 
     & > a {
-      font-size: 1.2rem;
-      padding: 0.8em 0;
+      font-size: 1.5rem;
+      padding: 1em 0;
       color: black;
+
+      &:first-of-type {
+        margin-top: 1em;
+      }
 
       &:hover {
         color: gray;

@@ -5,7 +5,6 @@ import {
   faPiggyBank,
   faVault,
   faWallet,
-  //   faCircleNotch,
 } from "@fortawesome/free-solid-svg-icons";
 
 const InfoBalance = () => {
@@ -22,7 +21,6 @@ const InfoBalance = () => {
 
     const fetchData = async (id) => {
       try {
-        setIsLoading(true);
         const response = await fetch(`http://localhost:8000/user/${id}`, {
           method: "GET",
           headers: {
@@ -34,13 +32,13 @@ const InfoBalance = () => {
         if (response.ok) {
           const dataResponse = await response.json();
           setResponse(dataResponse.balance);
+          setIsLoading(false);
         } else {
           throw new Error("Error al obtener los datos");
         }
       } catch (error) {
         setError(error);
       }
-      setIsLoading(false);
 
       const getTotalSaved = async () => {
         try {
@@ -96,44 +94,50 @@ const InfoBalance = () => {
 
     fetchData(idUser);
   }, []);
+
   return (
     <div className={classes.infoBalance}>
-      <div className={classes.cardBalance}>
-        <div className={classes.icon}>
-          <FontAwesomeIcon icon={faWallet} size="xl" />
-        </div>
-        <div className={classes.infoText}>
-          <label>Monedero</label>
-          <label className={classes.infoMoney}>
-            <span>{response} €</span>
-            {/* en el span ira el dinero que se tiene la base de datos */}
-          </label>
-        </div>
-      </div>
-      <div className={classes.cardBalance}>
-        <div className={classes.icon}>
-          <FontAwesomeIcon icon={faPiggyBank} size="xl" />
-        </div>
-        <div className={classes.infoText}>
-          <label>Total ahorrado</label>
-          <label className={classes.infoMoney}>
-            <span>{totalSaved ? totalSaved : 0} €</span>
-            {/* en el span ira el dinero que se tiene la base de datos */}
-          </label>
-        </div>
-      </div>
-      <div className={classes.cardBalance}>
-        <div className={classes.icon}>
-          <FontAwesomeIcon icon={faVault} size="xl" />
-        </div>
-        <div className={classes.infoText}>
-          <label>Media ahorrado</label>
-          <label className={classes.infoMoney}>
-            <span>{halfSaved ? halfSaved : 0} €</span>
-            {/* en el span ira el dinero que se tiene la base de datos */}
-          </label>
-        </div>
-      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : (
+        <>
+          <div className={classes.cardBalance}>
+            <div className={classes.icon}>
+              <FontAwesomeIcon icon={faWallet} size="xl" />
+            </div>
+            <div className={classes.infoText}>
+              <label>Monedero</label>
+              <label className={classes.infoMoney}>
+                <span>{response} €</span>
+              </label>
+            </div>
+          </div>
+          <div className={classes.cardBalance}>
+            <div className={classes.icon}>
+              <FontAwesomeIcon icon={faPiggyBank} size="xl" />
+            </div>
+            <div className={classes.infoText}>
+              <label>Total ahorrado</label>
+              <label className={classes.infoMoney}>
+                <span>{totalSaved ? totalSaved : 0} €</span>
+              </label>
+            </div>
+          </div>
+          <div className={classes.cardBalance}>
+            <div className={classes.icon}>
+              <FontAwesomeIcon icon={faVault} size="xl" />
+            </div>
+            <div className={classes.infoText}>
+              <label>Media ahorrado</label>
+              <label className={classes.infoMoney}>
+                <span>{halfSaved ? halfSaved : 0} €</span>
+              </label>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -70,7 +70,7 @@ router.get("/salesid/:id", verifyToken, async (req, res) => {
   }
 });
 
-//Crear nueva oferta
+//Create new sales
 
 router.post("/newsales", verifyToken, isAdmin, async (req, res) => {
   try {
@@ -94,6 +94,21 @@ router.post("/newsales", verifyToken, isAdmin, async (req, res) => {
     res
       .status(401)
       .json({ status: "Failed create new sale", datasave: null, error });
+  }
+});
+
+// Get number of sales
+
+router.get("/salescount", async (req, res) => {
+  try {
+    const data = await Sales.countDocuments();
+    res
+      .status(200)
+      .json({ status: "Success get number of sales", data, error: null });
+  } catch (error) {
+    res
+      .status(404)
+      .json({ status: "Failed get number of sales", data: null, error });
   }
 });
 

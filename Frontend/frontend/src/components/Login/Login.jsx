@@ -2,7 +2,7 @@ import classes from "./Login.module.css";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHippo } from "@fortawesome/free-solid-svg-icons";
+import Icon from "../../assets/Icon.png";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import Alert from "../Alert/Alert";
 
@@ -26,7 +26,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Reiniciar los estados alert e isLogged
     setAlert(false);
     setIsLogged(true);
 
@@ -52,7 +51,6 @@ const Login = () => {
         localStorage.removeItem("Password");
       }
 
-      //Almacenamiento response en localStorage para traerlo en Profile
       if (response.status === 200) {
         localStorage.setItem("Response", JSON.stringify(dataResponse));
         navigate("/profile");
@@ -77,7 +75,6 @@ const Login = () => {
     }
   };
 
-  //UseEffect LocalStorage - Remember me
   useEffect(() => {
     if (localStorage.getItem("Email") && localStorage.getItem("Password")) {
       document.querySelector("input[name='email']").value =
@@ -92,8 +89,8 @@ const Login = () => {
     <>
       <div className={classes.login}>
         <div className={classes.title}>
-          <FontAwesomeIcon icon={faHippo} />
-          <h1>GangApp</h1>
+          <img src={Icon} alt="Icon" />
+          <h1>SmartCart</h1>
         </div>
         <form onSubmit={handleSubmit}>
           <input
@@ -102,17 +99,19 @@ const Login = () => {
             name="email"
             onBlur={handleInputBlur}
           />
-          <input
-            type={eye ? "password" : "text"}
-            placeholder="Introduce tu constraseña"
-            name="password"
-            onBlur={handleInputBlur}
-          />
-          <FontAwesomeIcon
-            icon={eye ? faEye : faEyeSlash}
-            onClick={handlePassword}
-            className={classes.faEye}
-          />
+          <div className={classes.passwordWrapper}>
+            <input
+              type={eye ? "password" : "text"}
+              placeholder="Introduce tu constraseña"
+              name="password"
+              onBlur={handleInputBlur}
+            />
+            <FontAwesomeIcon
+              icon={eye ? faEye : faEyeSlash}
+              onClick={handlePassword}
+              className={classes.faEye}
+            />
+          </div>
           <label htmlFor="remember">
             <input
               type="checkbox"
