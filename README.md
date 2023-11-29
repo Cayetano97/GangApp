@@ -1,5 +1,9 @@
 # SmartCart
 
+## Development Status ⚠️
+
+SmartCart is currently undergoing active development, with ongoing enhancements and style changes. We're working on refining features and optimizing the user interface for a seamless shopping list experience on mobile devices.
+
 ## Overview
 
 SmartCart is a mobile-focused shopping list application developed with React and Node. The project is divided into two main folders: `backend` and `frontend`. Inside `frontend`, there's another folder with the same name.

@@ -13,7 +13,7 @@ app.use(cors());
 
 const URL = `mongodb+srv://admin:admin@cluster0.o4v9nwy.mongodb.net/smartcart?retryWrites=true&w=majority`;
 
-mongoose.connect(URL, { useNewUrlParser: true });
+mongoose.connect(URL);
 
 const db = mongoose.connection;
 
