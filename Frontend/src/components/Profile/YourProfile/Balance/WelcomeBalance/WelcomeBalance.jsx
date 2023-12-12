@@ -22,11 +22,7 @@ const WelcomeBalance = () => {
         <p>Hola, {capitalizeFirstLetter(username)}</p>
       </div>
       <div className={classes.welcomeText}>
-        <p>Bienvenido de nuevo a tu Monedero Virtual.</p>
-        <p>
-          Aquí podrás ver el saldo de tu cuenta, así como el historial de tus
-          transacciones.
-        </p>
+        <p>Bienvenido a tu monedero.</p>
         <div className={classes.buttonEditProfile}>
           <button onClick={handleOpenModal}>
             Edita tu perfil <FontAwesomeIcon icon={faCircleCheck} />

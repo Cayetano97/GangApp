@@ -127,9 +127,9 @@ const Market = () => {
     const maxProducts = Math.max(...products);
     const savedMoney = [];
 
-    if (maxProducts == productsQuantity) {
+    if (maxProducts === productsQuantity) {
       const equalProducts = merged.filter(
-        (product) => product.products == productsQuantity
+        (product) => product.products === productsQuantity
       );
 
       const equalPrices = equalProducts.sort((a, b) => {
@@ -162,7 +162,7 @@ const Market = () => {
       );
 
       const sortLessProducts = lessProducts.sort((a, b) => {
-        if (a.products != b.products) {
+        if (a.products !== b.products) {
           return b.products - a.products;
         } else {
           return a.price - b.price;

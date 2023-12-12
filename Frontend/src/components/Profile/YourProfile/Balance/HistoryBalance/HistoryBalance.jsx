@@ -57,7 +57,7 @@ const HistoryBalance = () => {
     <div className={classes.historyBalance}>
       <div className={classes.historyTable}>
         <p>
-          <FontAwesomeIcon icon={faTimeline} size="xl" /> Histórico
+          <FontAwesomeIcon icon={faTimeline} /> Histórico
         </p>
         {loading ? (
           <p>Loading...</p>
@@ -65,19 +65,19 @@ const HistoryBalance = () => {
           <p>{error}</p>
         ) : (
           <table>
-            <th>
+            <thead>
               <tr>
                 <th>Fecha:</th>
                 <th>Nombre:</th>
                 <th>Supermercado:</th>
               </tr>
-            </th>
+            </thead>
             <tbody>
               {historyList.map((item, index) => (
                 <tr key={index}>
                   <td>{formatDate(item.createdAt)}</td>
-                  <td>{capitalizeFirstLetter(item.name_list)}</td>{" "}
-                  <td>{item.supermarkets.join(", ")}</td>{" "}
+                  <td>{capitalizeFirstLetter(item.name_list)}</td>
+                  <td>{item.supermarkets.join(", ")}</td>
                 </tr>
               ))}
             </tbody>

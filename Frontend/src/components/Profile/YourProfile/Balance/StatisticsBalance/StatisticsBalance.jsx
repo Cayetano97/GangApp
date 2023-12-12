@@ -31,14 +31,17 @@ const StatisticsBalance = () => {
           }
         );
         if (response.status !== 200) {
-          console.log("Error getting data");
+          console.log(
+            "Error getting data from total lists - response is not 200"
+          );
+        } else if (response.status === 404) {
+          console.log("Error 404");
         } else {
           const data = await response.json();
           setTotalLists(data.data);
-          setLoading(true);
         }
       } catch (error) {
-        console.log("Error getting data");
+        console.log("Error getting data from total lists");
       }
     };
 
@@ -56,14 +59,17 @@ const StatisticsBalance = () => {
           }
         );
         if (response.status !== 200) {
-          console.log("Error getting data");
+          console.log(
+            "Error getting data from saved lists - response is not 200"
+          );
+        } else if (response.status === 404) {
+          console.log("Error 404");
         } else {
           const data = await response.json();
           setSavedLists(data.data);
-          setLoading(true);
         }
       } catch (error) {
-        console.log("Error getting data");
+        console.log("Error getting data from saved lists");
       }
     };
 
@@ -81,14 +87,17 @@ const StatisticsBalance = () => {
           }
         );
         if (response.status !== 200) {
-          console.log("Error getting data");
+          console.log(
+            "Error getting data from shopping lists - response is not 200"
+          );
+        } else if (response.status === 404) {
+          console.log("Error 404");
         } else {
           const data = await response.json();
           setShopLists(data.data);
-          setLoading(true);
         }
       } catch (error) {
-        console.log("Error getting data");
+        console.log("Error getting data from shopping lists");
       }
     };
 
@@ -106,14 +115,17 @@ const StatisticsBalance = () => {
           }
         );
         if (response.status !== 200) {
-          console.log("Error getting data");
+          console.log(
+            "Error getting data from finished lists - response is not 200"
+          );
+        } else if (response.status === 404) {
+          console.log("Error 404");
         } else {
           const data = await response.json();
           setFinishLists(data.data);
-          setLoading(true);
         }
       } catch (error) {
-        console.log("Error getting data");
+        console.log("Error getting data from finished lists ");
       }
     };
 
@@ -131,15 +143,20 @@ const StatisticsBalance = () => {
           }
         );
         if (response.status !== 200) {
-          console.log("Error getting data");
+          console.log(
+            "Error getting data from most used market - response is not 200"
+          );
         } else {
           const data = await response.json();
-          setSupermarket(data.data);
-          console.log(data);
-          setLoading(true);
+
+          if (data.data === 0) {
+            setSupermarket("No hay datos");
+          } else {
+            setSupermarket(data.data);
+          }
         }
       } catch (error) {
-        console.log("Error getting data");
+        console.log("Error getting data from most used market");
       }
     };
 
@@ -148,6 +165,16 @@ const StatisticsBalance = () => {
     getShopLists();
     getFinishLists();
     getSupermarket();
+
+    Promise.all([
+      getTotalLists(),
+      getSavedLists(),
+      getShopLists(),
+      getFinishLists(),
+      getSupermarket(),
+    ]).then(() => {
+      setLoading(true);
+    });
   }, []);
 
   return (
@@ -162,7 +189,7 @@ const StatisticsBalance = () => {
             </div>
             <p>
               Supermercado más frecuente:
-              <span> {supermarket.length === 0 ? "0" : supermarket}</span>
+              <span> {supermarket}</span>
             </p>
             <p>
               Número de listas creadas:

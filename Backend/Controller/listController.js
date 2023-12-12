@@ -226,13 +226,69 @@ router.get("/total_lists_finished/:id_user", verifyToken, async (req, res) => {
 
 // Obtener el supermercado mas usado por el usuario
 
-router.get("/most_used_market/:id_user", verifyToken, async (req, res) => {
+// router.get("/most_used_market/:id_user", async (req, res) => {
+//   try {
+//     const id = req.params.id_user;
+//     const listaUser = await List.find({ id_user: id });
+//     const listaProducto = await Product.find();
+//     const marketCount = {};
+//     const priceCount = {};
+//     const listShopping = listaUser[0].id_products;
+
+//     listShopping.forEach((product) => {
+//       listaProducto.forEach((listItem) => {
+//         if (listItem.name_product === product.name) {
+//           listItem.market.forEach((market) => {
+//             if (marketCount[market.name_market]) {
+//               marketCount[market.name_market] += 1;
+//               priceCount[market.name_market] += market.price;
+//             } else {
+//               marketCount[market.name_market] = 1;
+//               priceCount[market.name_market] = market.price;
+//             }
+//           });
+//         }
+//       });
+//     });
+//     const data = {
+//       marketCount,
+//       priceCount,
+//     };
+//     const mostUsedMarket = Object.keys(data.marketCount).reduce((a, b) =>
+//       data.marketCount[a] > data.marketCount[b] ? a : b
+//     );
+//     res.status(200).json({
+//       status: "Success getting most used market",
+//       data: mostUsedMarket,
+//       error: null,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(404).json({
+//       status: "Failed getting most used market",
+//       data: null,
+//       error: error,
+//     });
+//   }
+// });
+
+router.get("/most_used_market/:id_user", async (req, res) => {
   try {
     const id = req.params.id_user;
     const listaUser = await List.find({ id_user: id });
     const listaProducto = await Product.find();
     const marketCount = {};
     const priceCount = {};
+
+    if (listaUser.length === 0) {
+      res.status(200).json({
+        status: "Success getting most used market",
+        data: 0,
+        error: null,
+      });
+      return;
+    }
+
     const listShopping = listaUser[0].id_products;
 
     listShopping.forEach((product) => {
@@ -250,16 +306,13 @@ router.get("/most_used_market/:id_user", verifyToken, async (req, res) => {
         }
       });
     });
-
     const data = {
       marketCount,
       priceCount,
     };
-
     const mostUsedMarket = Object.keys(data.marketCount).reduce((a, b) =>
       data.marketCount[a] > data.marketCount[b] ? a : b
     );
-
     res.status(200).json({
       status: "Success getting most used market",
       data: mostUsedMarket,

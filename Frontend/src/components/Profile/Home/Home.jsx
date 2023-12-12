@@ -7,28 +7,24 @@ import {
   faSackDollar,
   faBasketShopping,
   faArrowUpRightFromSquare,
-  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import CardList from "../CardList/CardList";
 import CardSales from "../Sales/CardSales/CardSales";
 import Alert from "../../Alert/Alert";
 
 const Home = () => {
-  //UseStates
   const [dataResponseLists, setDataResponseLists] = useState([]);
   const [dataResponseSales, setDataResponseSales] = useState([]);
   const [hiddeButton, setHideButton] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  //Const declarations
   const navigate = useNavigate();
   const loginData = localStorage.getItem("Response");
   const loginDataParse = JSON.parse(loginData);
   const idUser = loginDataParse.data.id;
   const endpoint = "random";
 
-  //Handle functions
   const handleNewList = () => {
     navigate("/profile/new");
   };
@@ -48,9 +44,6 @@ const Home = () => {
     navigate("/profile/sales");
   };
 
-  //Fetch functions
-
-  //Id del usuario logueado (localStorage)
   const fetchLastLists = async (id) => {
     try {
       setIsLoading(true);
@@ -143,7 +136,7 @@ const Home = () => {
           <h3>Ofertas</h3>
         </div>
         <p>
-          Descubre todas nuestras ofertas exclusivas.{" "}
+          Descubre todas nuestras ofertas exclusivas.
           <FontAwesomeIcon
             icon={faArrowUpRightFromSquare}
             onClick={handleSales}
