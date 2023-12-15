@@ -1,4 +1,4 @@
-import classes from "./DeleteButton.module.css";
+import "./DeleteButton.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,10 +8,8 @@ const DeleteButton = (props) => {
   const [deleteLists, setDeleteLists] = useState(false);
   const navigate = useNavigate();
 
-  //Const declarations
   const data_id = props.data._id;
 
-  //Delete functions
   const deleteList = async (data_id) => {
     try {
       const response = await fetch(`http://localhost:8000/list/${data_id}`, {
@@ -34,13 +32,12 @@ const DeleteButton = (props) => {
   };
 
   const handleDeleteList = () => {
-    //Borrar la lista de la base de datos
     deleteList(data_id);
     navigate("/profile/");
   };
 
   return (
-    <div className={classes.deleteButton}>
+    <div className="deleteButton">
       <button onClick={handleDeleteList}>
         Borrar lista
         <FontAwesomeIcon icon={faTrashCan} />

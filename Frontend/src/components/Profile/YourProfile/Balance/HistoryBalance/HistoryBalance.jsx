@@ -1,4 +1,4 @@
-import classes from "./HistoryBalance.module.css";
+import "./HistoryBalance.css";
 import { faTimeline } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
@@ -54,8 +54,8 @@ const HistoryBalance = () => {
   }
 
   return (
-    <div className={classes.historyBalance}>
-      <div className={classes.historyTable}>
+    <div className="historyBalance">
+      <div className="historyTable">
         <p>
           <FontAwesomeIcon icon={faTimeline} /> Histórico
         </p>

@@ -1,11 +1,11 @@
-import classes from "./CardList.module.css";
+import "./CardList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../../Spinner/Spinner";
 
 const CardList = (props) => {
   return (
-    <div className={classes.singlelist}>
+    <div className="singlelist">
       {props.isLoading ? (
         <Spinner />
       ) : props.error ? (
@@ -17,27 +17,27 @@ const CardList = (props) => {
       ) : (
         props.dataResponse.data.map((list, index) => {
           return (
-            <div className={classes.list} key={list._id}>
-              <div className={classes.info}>
+            <div className="list" key={list._id}>
+              <div className="info">
                 <h5>{list.name_list}</h5>
                 <span
                   className={
                     list.status === "Guardada"
-                      ? classes.saved
+                      ? "saved"
                       : list.status === "Comprando"
-                      ? classes.shopping
-                      : classes.finished
+                      ? "shopping"
+                      : "finished"
                   }
                 >
                   {list.status}
                 </span>
               </div>
-              <div className={classes.products}>
+              <div className="products">
                 {list.id_products.length === 0 ? (
                   <>
                     <p>Todavía no hay añadido ningún producto.</p>
                     <button
-                      className={classes["open-list-noProducts"]}
+                      className="open-list-noProducts"
                       onClick={props.handleOpenList.bind(this, index)}
                     >
                       Ver lista
@@ -52,7 +52,7 @@ const CardList = (props) => {
                           {list.id_products.slice(0, 4).map((product) => {
                             return <li key={product.id}>{product.name}</li>;
                           })}
-                          <p className={classes.more}>...</p>
+                          <p className="more">...</p>
                         </>
                       ) : (
                         list.id_products.slice(0, 4).map((product) => {
@@ -60,12 +60,12 @@ const CardList = (props) => {
                         })
                       )}
                     </ul>
-                    <div className={classes["cardlist-footer"]}>
-                      <div className={classes["cardlist-footer-left"]}>
+                    <div className="cardlist-footer">
+                      <div className="cardlist-footer-left">
                         <p>{new Date(list.createdAt).toLocaleDateString()}</p>
                       </div>
                       <button
-                        className={classes["open-list"]}
+                        className="open-list"
                         onClick={props.handleOpenList.bind(this, index)}
                       >
                         Ver lista

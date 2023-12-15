@@ -1,4 +1,4 @@
-import classes from "./Login.module.css";
+import "./Login.css";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -87,8 +87,8 @@ const Login = () => {
 
   return (
     <>
-      <div className={classes.login}>
-        <div className={classes.title}>
+      <div className="login">
+        <div className="title">
           <img src={Icon} alt="Icon" />
           <h1>SmartCart</h1>
         </div>
@@ -99,7 +99,7 @@ const Login = () => {
             name="email"
             onBlur={handleInputBlur}
           />
-          <div className={classes.passwordWrapper}>
+          <div className="passwordWrapper">
             <input
               type={eye ? "password" : "text"}
               placeholder="Introduce tu constraseña"
@@ -109,7 +109,7 @@ const Login = () => {
             <FontAwesomeIcon
               icon={eye ? faEye : faEyeSlash}
               onClick={handlePassword}
-              className={classes.faEye}
+              className="faEye"
             />
           </div>
           <label htmlFor="remember">

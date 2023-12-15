@@ -1,4 +1,4 @@
-import classes from "./Home.module.css";
+import "./Home.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -101,15 +101,15 @@ const Home = () => {
   }, [idUser, endpoint]);
 
   return (
-    <div className={classes.home}>
-      <div className={classes["new-list"]}>
+    <div className="home">
+      <div className="new-list">
         <button onClick={handleNewList}>
           Añadir nueva lista
           <FontAwesomeIcon icon={faPlus} />
         </button>
       </div>
-      <div className={classes["shopping-lists"]}>
-        <div className={classes["shopping-lists-title"]}>
+      <div className="shopping-lists">
+        <div className="shopping-lists-title">
           <FontAwesomeIcon icon={faBasketShopping} />
           <h3>Última lista creada</h3>
         </div>
@@ -125,13 +125,13 @@ const Home = () => {
         )}
 
         {hiddeButton ? (
-          <button className={classes["see-all"]} onClick={handleAllLists}>
+          <button className="see-all" onClick={handleAllLists}>
             Todas tus listas
           </button>
         ) : null}
       </div>
-      <div className={classes.sales}>
-        <div className={classes["sales-title"]}>
+      <div className="sales">
+        <div className="sales-title">
           <FontAwesomeIcon icon={faSackDollar} />
           <h3>Ofertas</h3>
         </div>

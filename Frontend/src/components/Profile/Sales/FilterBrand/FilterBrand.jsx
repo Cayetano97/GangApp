@@ -1,4 +1,4 @@
-import classes from "./FilterBrand.module.css";
+import "./FilterBrand.css";
 import { useState, useEffect } from "react";
 
 const FilterBrand = ({ handleBrandChange }) => {
@@ -31,11 +31,11 @@ const FilterBrand = ({ handleBrandChange }) => {
   }, []);
 
   return (
-    <div className={classes.containerFilter}>
-      <div className={classes.filterHeader}>
+    <div className="containerFilter">
+      <div className="filterHeader">
         <p>Filtra por marca:</p>
       </div>
-      <div className={classes.select}>
+      <div className="select">
         {isLoading ? (
           <p>Cargando...</p>
         ) : allBrands && allBrands.length !== 0 ? (

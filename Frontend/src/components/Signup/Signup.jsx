@@ -1,4 +1,4 @@
-import classes from "./Signup.module.css";
+import "./Signup.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -73,8 +73,8 @@ const Signup = () => {
   };
 
   return (
-    <div className={classes.signup}>
-      <div className={classes.title}>
+    <div className="signup">
+      <div className="title">
         <img src={Icon} alt="Icon" />
         <h1>SmartCart</h1>
       </div>
@@ -97,7 +97,7 @@ const Signup = () => {
           name="lastname"
           onBlur={handleInputBlur}
         />
-        <div className={classes.passwordWrapper}>
+        <div className="passwordWrapper">
           <input
             type={eye ? "password" : "text"}
             placeholder="Introduce tu constraseña"
@@ -107,7 +107,7 @@ const Signup = () => {
           <FontAwesomeIcon
             icon={eye ? faEye : faEyeSlash}
             onClick={handlePassword}
-            className={classes.faEye}
+            className="faEye"
           />
         </div>
         <button type="submit" onBlur={handleInputBlur}>

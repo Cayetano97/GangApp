@@ -1,5 +1,5 @@
+import "./WelcomeBalance.css";
 import { useState } from "react";
-import classes from "./WelcomeBalance.module.css";
 import Modal from "../../../../Modal/Modal";
 import EditProfile from "../EditProfile/EditProfile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,13 +17,13 @@ const WelcomeBalance = () => {
     string.charAt(0).toUpperCase() + string.slice(1);
 
   return (
-    <div className={classes.welcomeBalance}>
-      <div className={classes.welcomeTitle}>
+    <div className="welcomeBalance">
+      <div className="welcomeTitle">
         <p>Hola, {capitalizeFirstLetter(username)}</p>
       </div>
-      <div className={classes.welcomeText}>
+      <div className="welcomeText">
         <p>Bienvenido a tu monedero.</p>
-        <div className={classes.buttonEditProfile}>
+        <div className="buttonEditProfile">
           <button onClick={handleOpenModal}>
             Edita tu perfil <FontAwesomeIcon icon={faCircleCheck} />
           </button>
@@ -35,7 +35,7 @@ const WelcomeBalance = () => {
           openModal={openModal}
           close={handleCloseModal}
           content={<EditProfile />}
-          className={classes.modalEditProfile}
+          className="modalEditProfile"
         />
       )}
     </div>

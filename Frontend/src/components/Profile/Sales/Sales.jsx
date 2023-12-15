@@ -1,4 +1,4 @@
-import classes from "./Sales.module.css";
+import "./Sales.css";
 import CardSales from "./CardSales/CardSales";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -62,9 +62,9 @@ const Sales = () => {
   }, [selectedBrand, salesData]);
 
   return (
-    <div className={classes.Sales}>
-      <div className={classes.back} onClick={handleBack}>
-        <FontAwesomeIcon icon={faArrowLeftLong} className={classes.arrow} />
+    <div className="Sales">
+      <div className="back" onClick={handleBack}>
+        <FontAwesomeIcon icon={faArrowLeftLong} className="arrow" />
         <span>Inicio</span>
       </div>
       <FilterBrand handleBrandChange={handleBrandChange} />

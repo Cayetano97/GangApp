@@ -1,4 +1,4 @@
-import classes from "./StatisticsBalance.module.css";
+import "./StatisticsBalance.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCashRegister } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
@@ -180,9 +180,9 @@ const StatisticsBalance = () => {
   return (
     <>
       {loading ? (
-        <div className={classes.statisticsBalance}>
-          <div className={classes.statisticsBalanceItem}>
-            <div className={classes.statisticsBalanceTittle}>
+        <div className="statisticsBalance">
+          <div className="statisticsBalanceItem">
+            <div className="statisticsBalanceTittle">
               <label>
                 <FontAwesomeIcon icon={faCashRegister} /> Estadísticas
               </label>

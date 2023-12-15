@@ -1,11 +1,9 @@
-import classes from "./CardSales.module.css";
+import "./CardSales.css";
 import Spinner from "../../../Spinner/Spinner";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
-const CardSales = ({ isLoading, error, dataResponseSales, selectedBrand }) => {
+const CardSales = ({ isLoading, error, dataResponseSales }) => {
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
   const navigate = useNavigate();
 
@@ -28,7 +26,7 @@ const CardSales = ({ isLoading, error, dataResponseSales, selectedBrand }) => {
   };
 
   return (
-    <div className={classes.productCard}>
+    <div className="productCard">
       {isLoading ? (
         <Spinner />
       ) : error ? (
@@ -40,53 +38,39 @@ const CardSales = ({ isLoading, error, dataResponseSales, selectedBrand }) => {
         dataResponseSales.map((sale, index) => {
           return (
             <button
-              className={classes.divButton}
+              className="divButton"
               onClick={() => handleCardClick(index)}
               key={sale._id}
             >
-              <div className={classes.cardContainer}>
+              <div className="cardContainer">
                 <div
                   className={
-                    clickedCardIndex === index
-                      ? classes.allCardClicked
-                      : classes.allCard
+                    clickedCardIndex === index ? "allCardClicked" : "allCard"
                   }
                 >
-                  <div className={classes.imgCard}>
+                  <div className="imgCard">
                     <img src={sale.url} alt={sale.name} loading="lazy" />
                   </div>
                   <div>
-                    <span className={classes.bucket}>
+                    <span className="bucket">
                       {(sale.discount * 100).toFixed(0)} %
                     </span>
                   </div>
-                  <div className={classes.infoCard}>
+                  <div className="infoCard">
                     <h3> {sale.name}</h3>
-                    <div className={classes.discount}>
-                      <div>
-                        <div>
-                          Marca:{" "}
-                          <span className={classes.brand}>{sale.brand}</span>
-                        </div>
-                        <div>
-                          Inicio Oferta:{" "}
-                          <span>
-                            {new Date(sale.start_discount).toLocaleDateString()}
-                          </span>
-                        </div>
-                        <div className={classes.arrow}>
-                          <div>
-                            Fin Oferta:{" "}
-                            <span>
-                              {new Date(sale.end_discount).toLocaleDateString()}
-                            </span>
-                          </div>
-                          <span onClick={handleRedirect}>
-                            Ver oferta{" "}
-                            <FontAwesomeIcon icon={faArrowRightLong} />
-                          </span>
-                        </div>
+                    <div className="discount">
+                      <span>Marca:&nbsp;{sale.brand}</span>
+                      <div className="date">
+                        <span>
+                          Inicio: &nbsp;
+                          {new Date(sale.start_discount).toLocaleDateString()}
+                        </span>
+                        <span>
+                          Fin: &nbsp;
+                          {new Date(sale.end_discount).toLocaleDateString()}
+                        </span>
                       </div>
+                      <span onClick={handleRedirect}>Ver oferta &nbsp; →</span>
                     </div>
                   </div>
                 </div>

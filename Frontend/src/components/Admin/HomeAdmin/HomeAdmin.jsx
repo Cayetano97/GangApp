@@ -1,4 +1,4 @@
-import classes from "./HomeAdmin.module.css";
+import "./HomeAdmin.css";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../Spinner/Spinner";
 import { useState, useEffect } from "react";
@@ -48,7 +48,6 @@ const HomeAdmin = () => {
         const data = await response.json();
         console.log("All products ok");
         setAllProducts(data.count);
-        setLoading(true);
       }
     } catch (error) {
       console.log("Error getting all products");
@@ -69,7 +68,6 @@ const HomeAdmin = () => {
       } else {
         const data = await response.json();
         setAllMarkets(data);
-        setLoading(true);
       }
     } catch (error) {
       console.log("Error getting all markets");
@@ -90,7 +88,6 @@ const HomeAdmin = () => {
       } else {
         const data = await response.json();
         setAllLists(data.data);
-        setLoading(true);
       }
     } catch (error) {
       console.log("Error getting all lists");
@@ -112,7 +109,6 @@ const HomeAdmin = () => {
         const data = await response.json();
         console.log("All users ok");
         setUsers(data.data);
-        setLoading(true);
       }
     } catch (error) {
       console.log("Error getting all users");
@@ -133,7 +129,6 @@ const HomeAdmin = () => {
       } else {
         const data = await response.json();
         setCountSales(data.data);
-        setLoading(true);
       }
     } catch (error) {
       console.log("Error getting sales count");
@@ -146,16 +141,26 @@ const HomeAdmin = () => {
     getAllUsers();
     getSalesCount();
     getAllMarkets();
+
+    Promise.all([
+      getAllProducts(),
+      getAllList(),
+      getAllUsers(),
+      getSalesCount(),
+      getAllMarkets(),
+    ]).then(() => {
+      setLoading(true);
+    });
   }, []);
 
   return (
-    <div className={classes.MainAdmin}>
+    <div className="MainAdmin">
       <h2>
         Admin
         <FontAwesomeIcon icon={faUserShield} />
       </h2>
       <h3>Productos</h3>
-      <div className={classes.actions}>
+      <div className="actions">
         <button onClick={handleRedirect0}>
           Productos <FontAwesomeIcon icon={faFile} />
         </button>
@@ -166,14 +171,14 @@ const HomeAdmin = () => {
           Editar productos <FontAwesomeIcon icon={faPenToSquare} />
         </button>
       </div>
-      <div className={classes.statsproducts}>
+      <div className="statsproducts">
         {loading ? (
           <>
             <span>
               <strong>Número de productos: </strong>
               {allProducts}
             </span>
-            <div className={classes.marketnames}>
+            <div className="marketnames">
               <span>
                 <strong>Número de supermercados: </strong>
                 {allMarkets.count}
@@ -191,7 +196,7 @@ const HomeAdmin = () => {
         )}
       </div>
       <h3>Listas</h3>
-      <div className={classes.statslist}>
+      <div className="statslist">
         <button onClick={handleRedirect3}>
           Crear Lista <FontAwesomeIcon icon={faPlus} />
         </button>
@@ -205,7 +210,7 @@ const HomeAdmin = () => {
         )}
       </div>
       <h3>Usuarios</h3>
-      <div className={classes.statslist}>
+      <div className="statslist">
         {loading ? (
           <span>
             <strong>Número de usuarios: </strong>
@@ -216,7 +221,7 @@ const HomeAdmin = () => {
         )}
       </div>
       <h3>Ofertas</h3>
-      <div className={classes.statslist}>
+      <div className="statslist">
         {loading ? (
           <span>
             <strong>Número de ofertas: </strong>

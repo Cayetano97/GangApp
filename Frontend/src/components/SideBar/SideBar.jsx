@@ -1,4 +1,4 @@
-import classes from "./SideBar.module.css";
+import "./SideBar.css";
 import { NavLink } from "react-router-dom";
 
 const SideBar = (props) => {
@@ -6,7 +6,7 @@ const SideBar = (props) => {
   const roleObject = JSON.parse(role);
   const userRole = roleObject.data.role;
   return (
-    <div className={classes.sidebar}>
+    <div className="sidebar">
       <nav>
         {userRole === "admin" ? (
           <NavLink to="/profile/admin" onClick={props.close}>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./CreateProducts.module.css";
+import "./CreateProducts.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import Alert from "../../Alert/Alert";
@@ -107,9 +107,9 @@ const CreateProducts = () => {
   };
 
   return (
-    <div className={classes.maincreate}>
+    <div className="maincreate">
       <h2>Crear productos</h2>
-      <form className={classes.formcreate}>
+      <form className="formcreate">
         <label htmlFor="name">Nombre</label>
         <input
           type="text"
@@ -155,7 +155,7 @@ const CreateProducts = () => {
                 handleMarketChange(index, "price", e.target.value)
               }
               placeholder="Introduce el precio del producto"
-              className={classes.inputprice}
+              className="inputprice"
             />
             <label htmlFor={`date_${index}`}>Fecha</label>
             <input
@@ -169,7 +169,7 @@ const CreateProducts = () => {
             <button
               type="button"
               onClick={() => handleRemoveMarket(index)}
-              className={classes.closebutton}
+              className="closebutton"
             >
               <FontAwesomeIcon icon={faXmark} />
             </button>
@@ -178,7 +178,7 @@ const CreateProducts = () => {
         <button
           type="button"
           onClick={handleAddMarket}
-          className={classes.addmarketbutton}
+          className="addmarketbutton"
         >
           Agregar mercado
         </button>
@@ -187,7 +187,7 @@ const CreateProducts = () => {
           <FontAwesomeIcon icon={faPlus} />
         </button>
         {created ? (
-          <div className={classes.greenalert}>
+          <div className="greenalert">
             <p>Producto creado correctamente</p>
           </div>
         ) : (
@@ -196,7 +196,7 @@ const CreateProducts = () => {
         {empty ? <Alert text="Por favor, rellene todos los campos" /> : ""}
       </form>
       <h3>Subir archivo CSV</h3>
-      <div className={classes.importfile}>
+      <div className="importfile">
         <input type="file" name="file" />
       </div>
     </div>

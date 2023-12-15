@@ -1,4 +1,4 @@
-import classes from "./InfoBalance.module.css";
+import "./InfoBalance.css";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -96,42 +96,42 @@ const InfoBalance = () => {
   }, []);
 
   return (
-    <div className={classes.infoBalance}>
+    <div className="infoBalance">
       {isLoading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>{error}</p>
       ) : (
         <>
-          <div className={classes.cardBalance}>
-            <div className={classes.icon}>
+          <div className="cardBalance">
+            <div className="icon">
               <FontAwesomeIcon icon={faWallet} size="xl" />
             </div>
-            <div className={classes.infoText}>
+            <div className="infoText">
               <label>Monedero</label>
-              <label className={classes.infoMoney}>
+              <label className="infoMoney">
                 <span>{response} €</span>
               </label>
             </div>
           </div>
-          <div className={classes.cardBalance}>
-            <div className={classes.icon}>
+          <div className="cardBalance">
+            <div className="icon">
               <FontAwesomeIcon icon={faPiggyBank} size="xl" />
             </div>
-            <div className={classes.infoText}>
+            <div className="infoText">
               <label>Total ahorrado</label>
-              <label className={classes.infoMoney}>
+              <label className="infoMoney">
                 <span>{totalSaved ? totalSaved : 0} €</span>
               </label>
             </div>
           </div>
-          <div className={classes.cardBalance}>
-            <div className={classes.icon}>
+          <div className="cardBalance">
+            <div className="icon">
               <FontAwesomeIcon icon={faVault} size="xl" />
             </div>
-            <div className={classes.infoText}>
+            <div className="infoText">
               <label>Media ahorrado</label>
-              <label className={classes.infoMoney}>
+              <label className="infoMoney">
                 <span>{halfSaved ? halfSaved : 0} €</span>
               </label>
             </div>

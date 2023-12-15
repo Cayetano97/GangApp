@@ -1,4 +1,4 @@
-import classes from "./Market.module.css";
+import "./Market.css";
 import Spinner from "../../Spinner/Spinner";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -209,8 +209,8 @@ const Market = () => {
 
   return (
     <>
-      <div className={classes.market}>
-        <div className={classes["market-title"]}>
+      <div className="market">
+        <div className="market-title">
           <FontAwesomeIcon icon={faCartShopping} />
           <h2>Elige tu supermercado</h2>
         </div>
@@ -219,8 +219,8 @@ const Market = () => {
           <Spinner />
         ) : (
           recomended && (
-            <div className={classes["cardHeader-recomended"]}>
-              <div className={classes.nameCheck}>
+            <div className="cardHeader-recomended">
+              <div className="nameCheck">
                 <h3>{recomended.market}</h3>
 
                 <input
@@ -232,42 +232,36 @@ const Market = () => {
                   onChange={() => handleCheckbox(recomended.market)}
                 />
               </div>
-              <div className={classes["cardList-recomended"]}>
+              <div className="cardList-recomended">
                 <ul>
-                  <li key={recomended.market} className={classes.liList}>
-                    <div className={classes.available}>
+                  <li key={recomended.market} className="liList">
+                    <div className="available">
                       <FontAwesomeIcon
                         icon={faBasketShopping}
-                        className={classes.icon}
+                        className="icon"
                       />
-                      Productos disponibles de tu lista:{" "}
-                      <span className={classes.checkboxText}>
+                      Productos disponibles de tu lista:
+                      <span className="checkboxText">
                         {recomended.products}/{productsQuantity}
                       </span>
-                      <div className={classes.total}>
-                        <FontAwesomeIcon
-                          icon={faReceipt}
-                          className={classes.icon}
-                        />
+                      <div className="total">
+                        <FontAwesomeIcon icon={faReceipt} className="icon" />
                         Precio total:
-                        <span className={classes.checkboxText}>
+                        <span className="checkboxText">
                           {recomended.price !== undefined
                             ? recomended.price.toFixed(2)
-                            : recomended.price}{" "}
+                            : recomended.price}
                           €
                         </span>
                       </div>
-                      <div className={classes.save}>
-                        <FontAwesomeIcon
-                          icon={faPiggyBank}
-                          className={classes.icon}
-                        />
+                      <div className="save">
+                        <FontAwesomeIcon icon={faPiggyBank} className="icon" />
                         <span>Ahorras: </span>
                         <ul>
                           {savedMoney.length > 0 && savedMarket.length > 0 ? (
                             savedMarket.map((market, index) => (
                               <li key={index}>
-                                <span>{savedMoney[index]} €</span> respecto al{" "}
+                                <span>{savedMoney[index]} €</span> respecto al
                                 {market}
                               </li>
                             ))
@@ -284,8 +278,8 @@ const Market = () => {
           )
         )}
       </div>
-      <div className={classes.market}>
-        <div className={classes["market-filter"]}>
+      <div className="market">
+        <div className="market-filter">
           <h4>Ordena por:</h4>
           <label>
             <input
@@ -293,7 +287,7 @@ const Market = () => {
               name="filter"
               value="price"
               onClick={handlePriceFilter}
-            />{" "}
+            />
             Precio
           </label>
           <label>
@@ -302,7 +296,7 @@ const Market = () => {
               name="filter"
               value="products"
               onClick={handleProductsFilter}
-            />{" "}
+            />
             Productos
           </label>
         </div>
@@ -315,8 +309,8 @@ const Market = () => {
             {array &&
               array.length !== 0 &&
               array.map((market) => (
-                <div key={market.market} className={classes.cardHeader}>
-                  <div className={classes.nameCheck}>
+                <div key={market.market} className="cardHeader">
+                  <div className="nameCheck">
                     <h3>{market.market}</h3>
                     <input
                       type="checkbox"
@@ -324,26 +318,23 @@ const Market = () => {
                       onChange={() => handleCheckbox(market.market)}
                     />
                   </div>
-                  <div className={classes.cardList}>
+                  <div className="cardList">
                     <ul>
-                      <li key={market.market} className={classes.liList}>
-                        <div className={classes.available}>
+                      <li key={market.market} className="liList">
+                        <div className="available">
                           <FontAwesomeIcon
                             icon={faBasketShopping}
-                            className={classes.icon}
+                            className="icon"
                           />
-                          Productos disponibles de tu lista:{" "}
-                          <span className={classes.checkboxText}>
+                          Productos disponibles de tu lista:
+                          <span className="checkboxText">
                             {market.products}/{productsQuantity}
                           </span>
                         </div>
-                        <div className={classes.total}>
-                          <FontAwesomeIcon
-                            icon={faReceipt}
-                            className={classes.icon}
-                          />
+                        <div className="total">
+                          <FontAwesomeIcon icon={faReceipt} className="icon" />
                           Precio total:
-                          <span className={classes.checkboxText}>
+                          <span className="checkboxText">
                             {market.price.toFixed(2)} €
                           </span>
                         </div>
@@ -355,8 +346,8 @@ const Market = () => {
           </>
         )}
       </div>
-      <div className={classes.divButton}>
-        <button onClick={handleButtonRedirect} className={classes.button}>
+      <div className="divButton">
+        <button onClick={handleButtonRedirect} className="button">
           Siguiente
           <FontAwesomeIcon icon={faArrowRightLong} />
         </button>

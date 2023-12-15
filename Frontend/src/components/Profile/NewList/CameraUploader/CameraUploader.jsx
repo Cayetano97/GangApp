@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import classes from "./CameraUploader.module.css";
+import "./CameraUploader.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ImageUploader = (props) => {
@@ -46,16 +46,16 @@ const ImageUploader = (props) => {
 
   return (
     <>
-      <div className={classes.Camera}>
+      <div className="Camera">
         <h3 id="titulo">{props.title}</h3>
         {/* <input type="file" accept="image/*" onChange={handleImageUpload} />
         {image && <img src={image} alt="Uploaded" />}
-        <div className={classes.CameraButton}>
+        <div className="CameraButton}>
           <button onClick={handleCameraButtonClick}>Abrir cámara</button>
         </div> */}
         <div>
           <input type="file" />
-          <button className={classes.btn} onClick={handleImageChange}>
+          <button className="btn" onClick={handleImageChange}>
             Subir archivo
           </button>
         </div>

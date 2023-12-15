@@ -1,4 +1,4 @@
-import classes from "./Used.module.css";
+import "./Used.css";
 import Spinner from "../../../Spinner/Spinner";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,15 +38,15 @@ const Used = () => {
 
   return (
     <>
-      <div className={classes.back} onClick={handleBack}>
-        <FontAwesomeIcon icon={faArrowLeftLong} className={classes.arrow} />{" "}
+      <div className="back" onClick={handleBack}>
+        <FontAwesomeIcon icon={faArrowLeftLong} className="arrow" />
         <span>Ofertas</span>
       </div>
-      <div className={classes.usedMain}>
+      <div className="usedMain">
         {isLoading ? (
           <>
             <h3>Oferta utilizada</h3>
-            <div className={classes.cardsale}>
+            <div className="cardsale">
               <img src={usedData.url} alt={usedData.name} />
               <span>
                 <strong>Producto: </strong>

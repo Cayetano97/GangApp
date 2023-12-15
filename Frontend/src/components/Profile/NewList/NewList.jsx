@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import classes from "./NewList.module.css";
+import { useState, useEffect } from "react";
+// import classes from "./NewList.module.css";
+import "./NewList.css";
 import CameraUploader from "./CameraUploader/CameraUploader";
 import { useNavigate } from "react-router-dom";
 import Alert from "../../Alert/Alert";
@@ -161,18 +162,16 @@ const NewList = () => {
 
   return (
     <>
-      <div className={classes.NewList}>
-        <div className={classes.back} onClick={handleBack}>
+      <div className="NewList">
+        <div className="back" onClick={handleBack}>
           <FontAwesomeIcon icon={faArrowLeftLong} />
         </div>
         <h2>Nueva Lista</h2>
-        <div className={classes.NewListForm}>
-          <div className={classes.NewListFormName}>
+        <div className="NewListForm">
+          <div className="NewListFormName">
             <label htmlFor="name">Nombre:</label>
             <input
-              className={`${classes.NameInput} ${
-                listNameError ? classes.ErrorInput : ""
-              }`}
+              className={`NameInput ${listNameError ? "ErrorInput" : ""}`}
               type="text"
               id="name"
               placeholder="Nombre de la lista"
@@ -181,11 +180,11 @@ const NewList = () => {
               onFocus={handleListNameFocus}
             />
           </div>
-          <div className={classes.NewListFormSearch}>
+          <div className="NewListFormSearch">
             <label htmlFor="search">Buscar Productos:</label>
             <input
-              className={`${classes.SearchInput} ${
-                noSelectedProducts ? classes.ErrorInput : ""
+              className={`SearchInput ${
+                noSelectedProducts ? "ErrorInput" : ""
               }`}
               type="text"
               id="search"
@@ -195,10 +194,10 @@ const NewList = () => {
               onFocus={handleInputFocus}
             />
           </div>
-          <div className={classes.NewListFormProducts}>
+          <div className="NewListFormProducts">
             <ul>
               {matchingProducts.map((product) => (
-                <li className={classes.ButtonAdd} key={product._id}>
+                <li className="ButtonAdd" key={product._id}>
                   {product.name_product}
                   <button onClick={() => addProductToList(product)}>
                     Agregar
@@ -208,15 +207,15 @@ const NewList = () => {
             </ul>
           </div>
         </div>
-        <div className={classes.List}>
-          <h3 className={classes.ListName}>
+        <div className="List">
+          <h3 className="ListName">
             {listName !== "" ? `${listName}:` : "- Sin Nombre -"}
           </h3>
-          <ul className={classes.UlList}>
+          <ul className="UlList">
             {selectedProducts.map((product) => (
               <li key={product._id}>
                 <button
-                  className={classes.RemoveButton}
+                  className="RemoveButton"
                   onClick={() => removeProductFromList(product)}
                 >
                   X
@@ -227,14 +226,12 @@ const NewList = () => {
           </ul>
         </div>
 
-        <div className={classes.NewListFormButton}>
+        <div className="NewListFormButton">
           <div>
             <button
               onClick={handleButtonSave}
               disabled={savedList}
-              className={
-                !savedList ? classes.normalButton : classes.disabledButton
-              }
+              className={!savedList ? "normalButton" : "disabledButton"}
             >
               Guardar
             </button>
@@ -243,9 +240,7 @@ const NewList = () => {
             <button
               onClick={handleButtonMarket}
               disabled={!savedList}
-              className={
-                savedList ? classes.normalButton : classes.disabledButton
-              }
+              className={savedList ? "normalButton" : "disabledButton"}
             >
               Elige un supermercado
             </button>

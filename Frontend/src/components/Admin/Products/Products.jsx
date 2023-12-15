@@ -1,4 +1,4 @@
-import classes from "./Products.module.css";
+import "./Products.css";
 import { useState, useEffect } from "react";
 import Spinner from "../../Spinner/Spinner";
 
@@ -71,7 +71,7 @@ const Products = () => {
   ];
 
   return (
-    <div className={classes.MainProducts}>
+    <div className="MainProducts">
       <h2>Productos</h2>
       <input
         type="text"
@@ -89,12 +89,12 @@ const Products = () => {
       >
         <option value=""> - Todos los supermercados -</option>
         {markets.map((market) => (
-          <option key={market} value={market} className={classes.optionmarket}>
+          <option key={market} value={market} className="optionmarket">
             {market}
           </option>
         ))}
       </select>
-      <div className={classes.checkboxes}>
+      <div className="checkboxes">
         <label>
           Ordenar por:
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -118,13 +118,12 @@ const Products = () => {
       {loading ? (
         <div>
           <h3>Número de productos: {filteredProducts.length} </h3>
-          <div className={classes.mapproducts}>
+          <div className="mapproducts">
             {filteredProducts.map((product, index) => (
-              <div key={index} className={classes.product}>
+              <div key={index} className="product">
                 <span>
-                  <strong>Nombre</strong>
+                  <strong>{product.name_product}</strong>
                 </span>
-                <span>{product.name_product}</span>
                 <img
                   src={
                     product.url
@@ -139,7 +138,7 @@ const Products = () => {
                 <a href={product.url} target="_blank" rel="noreferrer">
                   {product.url}
                 </a>
-                <div className={classes.market}>
+                <div className="market">
                   <h4> - Supermercados - </h4>
                   {product.market.map((item, index) => (
                     <div key={index}>

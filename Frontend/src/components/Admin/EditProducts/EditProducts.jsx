@@ -1,4 +1,4 @@
-import classes from "./EditProducts.module.css";
+import "./EditProducts.css";
 import SearchProducts from "./SearchProducts/SearchProducts";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -90,7 +90,6 @@ const EditProducts = () => {
     const updatedMarket = [...market];
     updatedMarket[index][field] = value;
 
-    // ID según el nombre del mercado
     const name = updatedMarket[index].name_market.toLowerCase();
     if (name === "mercadona") {
       updatedMarket[index].id_market = 1;
@@ -113,9 +112,9 @@ const EditProducts = () => {
     <>
       <SearchProducts handleEdit={() => setEdit(true)} />
       {edit && (
-        <div className={classes.mainedit}>
+        <div className="mainedit">
           <h2>Editar producto</h2>
-          <form className={classes.formcreate}>
+          <form className="formcreate">
             <label htmlFor="name">Nombre</label>
             <input
               type="text"
@@ -166,7 +165,7 @@ const EditProducts = () => {
                     handleMarketChange(index, "price", e.target.value)
                   }
                   placeholder="Introduce el precio del producto"
-                  className={classes.inputprice}
+                  className="inputprice"
                 />
                 <label htmlFor={`date_${index}`}>Fecha</label>
                 <input
@@ -180,7 +179,7 @@ const EditProducts = () => {
                 <button
                   type="button"
                   onClick={() => handleRemoveMarket(index)}
-                  className={classes.closebutton}
+                  className="closebutton"
                 >
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
@@ -189,7 +188,7 @@ const EditProducts = () => {
             <button
               type="button"
               onClick={handleAddMarket}
-              className={classes.addmarketbutton}
+              className="addmarketbutton"
             >
               Agregar mercado
             </button>

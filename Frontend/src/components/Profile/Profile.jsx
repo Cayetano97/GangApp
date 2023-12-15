@@ -1,4 +1,4 @@
-import classes from "./Profile.module.css";
+import "./Profile.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
@@ -47,18 +47,18 @@ const Profile = () => {
   };
 
   return (
-    <div className={classes.profile}>
-      <div className={classes.profileheader}>
+    <div className="profile">
+      <div className="profileheader">
         {loginDataParse.data.role === "admin" ? (
           <img src={IconAdmin} alt="Icon" onClick={handleHome} />
         ) : (
           <img src={Icon} alt="Icon" onClick={handleHome} />
         )}
-        <div className={classes["profile-header-left"]}>
-          <p className={classes.card}>{capitalizedUsername}</p>
+        <div className="profile-header-left">
+          <p className="card">{capitalizedUsername}</p>
           <FontAwesomeIcon
             icon={isOpen ? faXmark : faBarsStaggered}
-            className={classes["icon-menu"]}
+            className="icon-menu"
             onClick={handleOpenMenu}
           />
         </div>

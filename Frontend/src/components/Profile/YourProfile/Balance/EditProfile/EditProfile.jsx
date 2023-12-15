@@ -1,4 +1,4 @@
-import classes from "./EditProfile.module.css";
+import "./EditProfile.css";
 import Alert from "../../../../Alert/Alert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseUser } from "@fortawesome/free-solid-svg-icons";
@@ -105,18 +105,18 @@ const EditProfile = () => {
   }, []);
 
   return (
-    <div className={classes.yourProfileModal}>
+    <div className="yourProfileModal">
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className={classes.profileModal}>
+        <div className="profileModal">
           <h3>
-            <FontAwesomeIcon className={classes.iconModal} icon={faHouseUser} />
+            <FontAwesomeIcon className="iconModal" icon={faHouseUser} />
             Tu Perfil
           </h3>
-          <div className={classes.profileInfoModal}>
-            <div className={classes.profileInfoItemModal}>
-              <form className={classes.EditProfileForm}>
+          <div className="profileInfoModal">
+            <div className="profileInfoItemModal">
+              <form className="EditProfileForm">
                 <p>Nombre:</p>
                 <input
                   type="text"
@@ -165,13 +165,13 @@ const EditProfile = () => {
               </form>
               <button
                 type="submit"
-                className={classes.EditProfileButton}
+                className="EditProfileButton"
                 onClick={() => patchProfile()}
               >
                 Guardar
               </button>
               {created ? (
-                <div className={classes.greenalert}>
+                <div className="greenalert">
                   <p>Perfil modificado correctamente</p>
                 </div>
               ) : (

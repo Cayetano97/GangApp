@@ -1,4 +1,4 @@
-import classes from "./AlertGreen.module.css";
+import "./AlertGreen.css";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +21,7 @@ const AlertGreen = (props) => {
   });
 
   return (
-    <div className={isAlert ? classes.active : classes.close}>
+    <div className={isAlert ? "active" : "close"}>
       <FontAwesomeIcon icon={faXmark} onClick={handleAlert} />
       {props.text}
     </div>

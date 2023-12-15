@@ -1,4 +1,4 @@
-import classes from "./Faq.module.css";
+import "./Faq.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -72,8 +72,8 @@ const Faq = () => {
   };
 
   return (
-    <div className={classes.faqComplete}>
-      <div className={classes.contactInfo}>
+    <div className="faqComplete">
+      <div className="contactInfo">
         <div>
           <label>
             <h3>
@@ -86,7 +86,7 @@ const Faq = () => {
         <p>Email: contacto@contacto.com</p>
         <p>Dirección: Calle Falsa 123, Malága</p>
       </div>
-      <div className={classes.faqContainer}>
+      <div className="faqContainer">
         <div>
           <label>
             <h3>
@@ -95,18 +95,18 @@ const Faq = () => {
           </label>
         </div>
         {faqData.map((faqItem) => (
-          <div key={faqItem.id} className={classes.faqItem}>
+          <div key={faqItem.id} className="faqItem">
             <div
-              className={classes.question}
+              className="question"
               onClick={() => handleQuestionClick(faqItem.id)}
             >
               {faqItem.question}
-              <span className={classes.toggleIcon}>
+              <span className="toggleIcon">
                 {expandedQuestionId === faqItem.id ? "-" : "+"}
               </span>
             </div>
             {expandedQuestionId === faqItem.id && (
-              <p className={classes.answer}>{faqItem.answer}</p>
+              <p className="answer">{faqItem.answer}</p>
             )}
           </div>
         ))}

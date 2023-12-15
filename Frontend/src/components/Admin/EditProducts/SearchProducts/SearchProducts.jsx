@@ -1,4 +1,4 @@
-import classes from "./SearchProducts.module.css";
+import "./SearchProducts.css";
 import { useState, useEffect } from "react";
 import Alert from "../../../Alert/Alert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -109,7 +109,7 @@ const SearchProducts = ({ handleEdit }) => {
   }, [input]);
 
   return (
-    <div className={classes.mainsearch}>
+    <div className="mainsearch">
       <h2>Búsqueda de productos</h2>
       <input
         type="text"
@@ -122,11 +122,11 @@ const SearchProducts = ({ handleEdit }) => {
         }
       />
       {input !== "" ? (
-        <div className={classes.resultsSearch}>
+        <div className="resultsSearch">
           {loading && results2.data && results2.data.length > 0 ? (
             <>
               {results2.data.slice(0, 10).map((product) => (
-                <div key={product.id} className={classes.select}>
+                <div key={product.id} className="select">
                   <span>{product.name_product}</span>
                   <button onClick={() => handleSelect(product.name_product)}>
                     Seleccionar
@@ -143,7 +143,7 @@ const SearchProducts = ({ handleEdit }) => {
       )}
 
       {error ? <Alert text="No se ha encontrado el producto." /> : ""}
-      <div className={classes.searchresults}>
+      <div className="searchresults">
         {loading && results.data && results.data.length > 0 ? (
           <>
             <span>{results.data[0].name_product}</span>
@@ -152,7 +152,7 @@ const SearchProducts = ({ handleEdit }) => {
                 {results.data[0].url}
               </a>
             )}
-            <div className={classes.marketcontainer}>
+            <div className="marketcontainer">
               {results.data[0].market.map((market) => (
                 <ul key={market.id_market}>
                   <li>
@@ -169,7 +169,7 @@ const SearchProducts = ({ handleEdit }) => {
                 </ul>
               ))}
             </div>
-            <div className={classes.buttons}>
+            <div className="buttons">
               <button onClick={() => handleDelete(idProduct)}>
                 Eliminar producto
                 <FontAwesomeIcon icon={faTrash} />
