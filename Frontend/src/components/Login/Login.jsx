@@ -6,6 +6,8 @@ import Icon from "../../assets/Icon.png";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import Alert from "../Alert/Alert";
 
+import { Button } from "antd";
+
 const Login = () => {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
@@ -121,13 +123,20 @@ const Login = () => {
             />
             Recordar sesión
           </label>
-          <button
+          <Button
             onBlur={handleInputBlur}
             onChange={handleCheckbox}
-            type="submit"
+            type="primary"
+            htmlType="submit"
+            style={{
+              width: "100%",
+              // backgroundColor: "coral",
+              // fontWeight: "600",
+              // color: "white",
+            }}
           >
             Inicia sesión
-          </button>
+          </Button>
           <p>
             ¿Aún no estás registrado? <Link to="/signup">Regístrate</Link>
           </p>

@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
 mongoose.set("strictQuery", false);
 mongoose.set("runValidators", true);
 
@@ -39,5 +38,5 @@ const product = require("./Controller/productController");
 app.use("/", product);
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log("Server running on port " + PORT);
 });

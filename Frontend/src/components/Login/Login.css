@@ -93,25 +93,6 @@
       }
     }
 
-    & > button {
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      width: 100%;
-      padding: 0.5em 1em;
-      margin: 1em 0;
-      border-radius: 0.3rem;
-      background-color: coral;
-      color: white;
-      border: 1px solid transparent;
-
-      &:hover {
-        background-color: #fcefe8;
-        color: #e86934;
-        cursor: pointer;
-        border: 1px solid #e86934;
-      }
-    }
-
     & > p {
       font-size: 1.1rem;
       margin-top: 0.5em;
