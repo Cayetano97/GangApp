@@ -130,9 +130,6 @@ const Login = () => {
             htmlType="submit"
             style={{
               width: "100%",
-              // backgroundColor: "coral",
-              // fontWeight: "600",
-              // color: "white",
             }}
           >
             Inicia sesión
